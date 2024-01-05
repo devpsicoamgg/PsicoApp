@@ -1,13 +1,11 @@
-const { Router } = require('express'); 
+const { Router } = require("express");
 
-const patchPatientRouter = Router()
+const {
+  patchPatientHandler,
+} = require("../../handlers/thePatchHandlers/pctPatchHandler.js");
 
-const patchPatientHandler = (req, res) => {
-  res.status(200).send("Modificar datos del paciente");
-}
-
+const patchPatientRouter = Router();
 
 patchPatientRouter.patch("/patients/:patientId", patchPatientHandler);
 
-
-module.exports = patchPatientRouter
+module.exports = patchPatientRouter;
