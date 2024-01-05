@@ -1,7 +1,7 @@
 const { Router } = require("express");
-const getPatientsRouter = require("./theGetRoutes/getRouter");
-const patchPatientRouter = require("./thePatchRoutes/patchRouter");
-const postPatientRouter = require("./thePostRoutes/postRouter");
+const getPatientsRouter = require("./theGetRoutes/pctGetRouter");
+const patchPatientRouter = require("./thePatchRoutes/pctPatchRouter");
+const postPatientRouter = require("./thePostRoutes/pctPostRouter");
 
 const mainRouterManager = Router();
 
