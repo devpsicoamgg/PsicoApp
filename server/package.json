@@ -4,7 +4,8 @@
   "description": "PsicoApp is a platform designed for comprehensive management and administration of psychology patients, therapy sessions, and brand positioning strategies.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1", 
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
