@@ -4,7 +4,7 @@ module.exports = (sequelize) => {
   sequelize.define(
     "TrackingSession",
     {
-      id: {
+    trackingSessionId: {
         type: DataTypes.UUID,
         allowNull: false,
         primaryKey: true,

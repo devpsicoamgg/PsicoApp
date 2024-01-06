@@ -4,7 +4,7 @@ module.exports = (sequelize) => {
   sequelize.define(
     "ClinicalHistory",
     {
-      id: {
+      Id: {
         type: DataTypes.UUID,
         allowNull: false,
         primaryKey: true,
@@ -127,7 +127,11 @@ module.exports = (sequelize) => {
         allowNull: true,
       },
       diagnosesType: {
-        type: DataTypes.ENUM("Impresión diagnostica", "Confirmado nuevo", "Confirmado repetido"),
+        type: DataTypes.ENUM(
+          "Impresión diagnostica",
+          "Confirmado nuevo",
+          "Confirmado repetido"
+        ),
         allowNull: false,
       },
       additionalNotes: {
@@ -143,9 +147,12 @@ module.exports = (sequelize) => {
         allowNull: false,
         defaultValue: true,
       },
-
+      isActive: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
+      },
     },
-    { timestamps: true }
+    { timestamps: true, tableName: "ClinicalHistory" }
   );
 };
-

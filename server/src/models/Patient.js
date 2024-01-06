@@ -4,7 +4,7 @@ module.exports = (sequelize) => {
   sequelize.define(
     "Patient",
     {
-      id: {
+      Id: {
         type: DataTypes.UUID,
         allowNull: false,
         primaryKey: true,
