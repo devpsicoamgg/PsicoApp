@@ -11,28 +11,18 @@ module.exports = (sequelize) => {
         defaultValue: DataTypes.UUIDV4,
       },
 
-      firstName: {
+      fullName: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      
-      secondName: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
 
-      firstSurName: {
+      lastName: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      
-      secondSurName: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
 
-      kindDoc: {
-        type: DataTypes.STRING,
+      documentTypeId: {
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
 
@@ -47,9 +37,9 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       
-      maritalStatus: {
-        type: DataTypes.STRING,
-        allowNull: true,
+      maritalStatusId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
       },
 
       disability: {
@@ -57,8 +47,8 @@ module.exports = (sequelize) => {
         defaultValue: false,
       },
 
-      gender: {
-        type: DataTypes.STRING,
+      genderId: {
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
 
