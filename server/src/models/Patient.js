@@ -1,28 +1,38 @@
 const { DataTypes } = require("sequelize");
 
-module.exports = (sequelize) => {
-  sequelize.define(
+const PatientModel = (sequelize) => {
+  const Patient = sequelize.define(
     "Patient",
     {
-      Id: {
+      id: {
         type: DataTypes.UUID,
         allowNull: false,
         primaryKey: true,
         defaultValue: DataTypes.UUIDV4,
       },
 
-      fullName: {
+      firstName: {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      
+      secondName: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
 
-      lastName: {
+      firstSurName: {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      
+      secondSurName: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
 
-      documentTypeId: {
-        type: DataTypes.INTEGER,
+      kindDoc: {
+        type: DataTypes.STRING,
         allowNull: false,
       },
 
@@ -37,9 +47,9 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       
-      maritalStatusId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+      maritalStatus: {
+        type: DataTypes.STRING,
+        allowNull: true,
       },
 
       disability: {
@@ -47,8 +57,8 @@ module.exports = (sequelize) => {
         defaultValue: false,
       },
 
-      genderId: {
-        type: DataTypes.INTEGER,
+      gender: {
+        type: DataTypes.STRING,
         allowNull: false,
       },
 
@@ -85,5 +95,8 @@ module.exports = (sequelize) => {
     },
     { timestamps: true }
   );
+
+  return Patient;
 };
 
+module.exports = PatientModel;
