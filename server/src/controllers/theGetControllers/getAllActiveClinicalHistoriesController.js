@@ -26,8 +26,8 @@ const getAllActiveClinicalHistories = async () => {
 
     return { success: true, data: formattedData };
   } catch (error) {
-    console.error('Error al obtener historias clínicas activas:', error);
-    return { success: false, error: 'Error interno del servidor', details: error.message };
+    console.error('Error getting all clinical histories:', error);
+    return { success: false, error: 'Internal server error', details: error.message };
   }
 };
 

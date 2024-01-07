@@ -5,8 +5,8 @@ const getClinicalHistories = async (patientId) => {
     const patient = await Patient.findByPk(patientId);
 
     if (!patient) {
-      console.error('Paciente no encontrado');
-      throw new Error('Paciente no encontrado');
+      console.error('Patient not found');
+      throw new Error('Patient not found');
     }
 
     const clinicalHistories = await ClinicalHistory.findAll({
@@ -18,8 +18,8 @@ const getClinicalHistories = async (patientId) => {
     
     return { success: true, data: { patient: { id: patient.id, name: patientName, document: patient.numberDoc }, clinicalHistories } };
   } catch (error) {
-    console.error('Error al obtener historias clínicas:', error);
-    throw { success: false, error: 'Error interno del servidor', details: error.message };
+    console.error('Error getting clinical histories:', error);
+    throw { success: false, error: 'Internal server error', details: error.message };
   }
 };
 

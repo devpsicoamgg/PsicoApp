@@ -9,16 +9,16 @@ const getPatientDetailsController = async (patientId) => {
     
 
     if (!patient) {
-      console.error("Paciente no encontrado");
-      throw new Error("Paciente no encontrado");
+      console.error("Patient not found!");
+      throw new Error("Patient not found!");
     }
 
     return { success: true, data: patient };
   } catch (error) {
-    console.error("Error al obtener detalles del paciente:", error);
+    console.error("Error getting patient data:", error);
     throw {
       success: false,
-      error: "Error interno del servidor",
+      error: "Internal Server Error",
       details: error.message,
     };
   }

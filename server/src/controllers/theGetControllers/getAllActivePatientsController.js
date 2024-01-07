@@ -8,8 +8,8 @@ const getAllActivePatients = async () => {
 
     return { activePatients };
   } catch (error) {
-    console.error('Error al obtener todos los pacientes activos:', error);
-    return { success: false, error: 'Error interno del servidor', details: error.message };
+    console.error('Error getting all active patients:', error);
+    return { success: false, error: 'Internal server error', details: error.message };
   }
 };
 
