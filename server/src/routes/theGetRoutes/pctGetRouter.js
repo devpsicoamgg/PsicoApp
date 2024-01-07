@@ -2,7 +2,6 @@ const { Router } = require("express");
 
 const {
   getAllPatientsHandler,
-  getTrackingSessionsHandler,
 } = require("../../handlers/theGetHandlers/getAllPatientsHandler.js");
 
 const {
@@ -21,18 +20,25 @@ const {
   getPatientDetailsHandler,
 } = require("../../handlers/theGetHandlers/getPatientDetailsHandler.js");
 
+const {
+  getTrackingSessionsHandler,
+} = require("../../handlers/theGetHandlers/getTrackingSessionsHandler.js");
+
 const getPatientsRouter = Router();
 
-getPatientsRouter.get("/patients", getAllPatientsHandler);
+getPatientsRouter.get("/patients", 
+getAllPatientsHandler);
 
-getPatientsRouter.get("/patients/active", getAllActivePatientsHandler);
+getPatientsRouter.get("/patients/active", 
+getAllActivePatientsHandler);
 
 getPatientsRouter.get(
   "/patients/clinical-histories/active",
   getAllActiveClinicalHistoriesHandler
 );
 
-getPatientsRouter.get("/patients/:patientId", getPatientDetailsHandler);
+getPatientsRouter.get("/patients/:patientId", 
+getPatientDetailsHandler);
 
 getPatientsRouter.get(
   "/patients/:patientId/clinical-histories",

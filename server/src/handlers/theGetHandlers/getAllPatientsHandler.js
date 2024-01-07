@@ -14,12 +14,8 @@ const getAllPatientsHandler = async (req, res) => {
 
 
 
-const getTrackingSessionsHandler = (req, res) => {
-  res.status(200).send("Sesiones de seguimiento de un paciente");
-};
 
 
 module.exports = {
   getAllPatientsHandler,
-  getTrackingSessionsHandler,
 }

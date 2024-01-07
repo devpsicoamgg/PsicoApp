@@ -14,24 +14,23 @@ const postTrackingSession = async (
   treatmentPlanAdjustments,
   moodRating,
   sessionRating,
-  additionalNotes,
+  additionalNotes
 ) => {
   try {
-    const patient = await Patient.findByPk(patientId, { attributes: ['id', 'active'] });
-    const clinicalHistory = await ClinicalHistory.findByPk(idClinicalHistory, { include: Patient });
+    const patient = await Patient.findByPk(patientId, {
+      attributes: ["id", "active"],
+    });
+    const clinicalHistory = await ClinicalHistory.findByPk(idClinicalHistory);
 
-    if (!patient || !clinicalHistory || !clinicalHistory.Patient) {
-      console.error('Paciente o historia clínica no encontrados');
-      throw new Error('Paciente o historia clínica no encontrados');
+    if (!patient || !clinicalHistory) {
+      console.error("Paciente o historia clínica no encontrados");
+      throw new Error("Paciente o historia clínica no encontrados");
     }
 
-    const patientFromHistory = clinicalHistory.Patient;
-
-    if (!patient.active || !patientFromHistory.active || patient.id !== patientFromHistory.id) {
-      console.error('El paciente o la historia clínica no están activos o no coinciden');
-      throw new Error('El paciente o la historia clínica no están activos o no coinciden');
+    if (!patient.active || !clinicalHistory.isActive) {
+      console.error("El paciente o la historia clínica no están activos");
+      throw new Error("El paciente o la historia clínica no están activos");
     }
-
     const newTrackingSession = await TrackingSession.create({
       date,
       startTime,
@@ -49,9 +48,12 @@ const postTrackingSession = async (
       ClinicalHistoryId: idClinicalHistory,
     });
 
+    await newTrackingSession.setPatient(patient);
+    await newTrackingSession.setClinicalHistory(clinicalHistory);
+
     return newTrackingSession;
   } catch (error) {
-    console.error('Error al crear la sesión de seguimiento:', error);
+    console.error("Error al crear la sesión de seguimiento:", error);
     throw error;
   }
 };
