@@ -6,7 +6,7 @@ const getAllActivePatients = async () => {
       where: { active: true },
     });
 
-    return { success: true, data: activePatients };
+    return { activePatients };
   } catch (error) {
     console.error('Error al obtener todos los pacientes activos:', error);
     return { success: false, error: 'Error interno del servidor', details: error.message };
