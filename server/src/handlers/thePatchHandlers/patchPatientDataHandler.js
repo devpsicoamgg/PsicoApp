@@ -1,22 +1,21 @@
-const patchPatientHandler = (req, res) => {
+
+
+const { updateDataPatient } = require("../../controllers/thePatchController/patchPatientDataController");
+
+const patchPatientHandler = async (req, res) => {
   const { patientId } = req.params;
-  const {     
-    firstName,
-    secondName,
-    firstSurName,
-    secondSurName,
-    kindDoc,
-    numberDoc,
-    nataleDate,
-    maritalStatus,
-    disability,
-    gender,
-    occupation,
-    email,
-    phoneNumber,
-    date, 
-  } = req.body;
-  res.status(200).send(`Datos del paciente con ID ${patientId} modificados con éxito.`);
+  const updatedData = req.body;
+
+  const result = await updateDataPatient(patientId, updatedData);
+
+  if (result.success) {
+    res.status(200).json({ message: result.message });
+  } else {
+    res.status(404).json({ message: result.message });
+  }
 };
 
-module.exports = { patchPatientHandler };
+module.exports = {
+  patchPatientHandler,
+};
+
