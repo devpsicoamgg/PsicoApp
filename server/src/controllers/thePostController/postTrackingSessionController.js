@@ -23,14 +23,15 @@ const postTrackingSession = async (
     const clinicalHistory = await ClinicalHistory.findByPk(idClinicalHistory);
 
     if (!patient || !clinicalHistory) {
-      console.error("Paciente o historia clínica no encontrados");
-      throw new Error("Paciente o historia clínica no encontrados");
+      console.error("Patient or clinical history not found");
+      throw new Error("Patient or clinical history not found");
     }
 
     if (!patient.active || !clinicalHistory.isActive) {
-      console.error("El paciente o la historia clínica no están activos");
-      throw new Error("El paciente o la historia clínica no están activos");
+      console.error("The patient or clinical history is not active");
+      throw new Error("The patient or clinical history is not active");
     }
+
     const newTrackingSession = await TrackingSession.create({
       date,
       startTime,
@@ -53,7 +54,7 @@ const postTrackingSession = async (
 
     return newTrackingSession;
   } catch (error) {
-    console.error("Error al crear la sesión de seguimiento:", error);
+    console.error("Error creating the tracking session:", error);
     throw error;
   }
 };

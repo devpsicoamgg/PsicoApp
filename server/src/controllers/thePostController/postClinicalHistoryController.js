@@ -93,13 +93,13 @@ const postClinicalHistory = async (
     if (patient) {
       await newClinicalHistory.setPatient(patient);
     } else {
-      console.error('Paciente no encontrado');
+      console.error('Patient not found');
     }
 
     return newClinicalHistory;
   } catch (error) {
 
-    console.error('Error al crear historia clínica:', error);
+    console.error('Error creating clinical History:', error);
     throw error; 
   }
 };

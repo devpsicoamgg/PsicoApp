@@ -1,6 +1,4 @@
-
 const { Patient, ClinicalHistory } = require("../../db");
-
 
 const togglePatientStatus = async (patientId, active) => {
   try {
@@ -8,27 +6,44 @@ const togglePatientStatus = async (patientId, active) => {
 
     if (patient) {
       const currentPatientState = patient.active;
-      const clinicalHistories = await ClinicalHistory.findAll({ where: { PatientId: patientId } });
+      const clinicalHistories = await ClinicalHistory.findAll({
+        where: { PatientId: patientId },
+      });
 
       if (!active) {
-        await ClinicalHistory.update({ isActive: false }, { where: { PatientId: patientId } });
+        await ClinicalHistory.update(
+          { isActive: false },
+          { where: { PatientId: patientId } }
+        );
       }
 
       await patient.update({ active });
 
-      // Si el paciente estaba desactivado y se está activando, activar las historias clínicas
+      // If the patient was inactive and is being activated, activate the clinical histories
       if (!currentPatientState && active) {
-        await ClinicalHistory.update({ isActive: false }, { where: { PatientId: patientId } });
+        await ClinicalHistory.update(
+          { isActive: true },
+          { where: { PatientId: patientId } }
+        );
       }
 
-      const action = active ? 'activado' : 'desactivado';
-      return { success: true, message: `El paciente con ID ${patientId} ha sido ${action}.` };
+      const action = active ? "activated" : "deactivated";
+      return {
+        success: true,
+        message: `Patient with ID ${patientId} has been ${action}.`,
+      };
     } else {
-      return { success: false, message: `No se encontró al paciente con ID ${patientId}.` };
+      return {
+        success: false,
+        message: `Patient with ID ${patientId} not found.`,
+      };
     }
   } catch (error) {
-    console.error(`Error al ${active ? 'activar' : 'desactivar'} al paciente:`, error);
-    return { success: false, message: 'Error interno del servidor' };
+    console.error(
+      `Error ${active ? "activating" : "deactivating"} the patient:`,
+      error
+    );
+    return { success: false, message: "Internal server error" };
   }
 };
 

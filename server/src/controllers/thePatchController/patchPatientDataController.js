@@ -5,15 +5,21 @@ const updateDataPatient = async (patientId, updatedData) => {
     const patient = await Patient.findByPk(patientId);
 
     if (!patient) {
-      return { success: false, message: `No se encontró al paciente con ID ${patientId}.` };
+      return {
+        success: false,
+        message: `Patient with ID ${patientId} not found.`,
+      };
     }
 
     await patient.update(updatedData);
 
-    return { success: true, message: `Datos del paciente con ID ${patientId} modificados con éxito.` };
+    return {
+      success: true,
+      message: `Patient data with ID ${patientId} successfully updated.`,
+    };
   } catch (error) {
-    console.error('Error al actualizar los datos del paciente:', error);
-    return { success: false, message: 'Error interno del servidor' };
+    console.error("Error updating patient data:", error);
+    return { success: false, message: "Internal server error" };
   }
 };
 

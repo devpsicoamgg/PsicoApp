@@ -5,7 +5,7 @@ const patchPatientStatusHandler = async (req, res) => {
   const { active } = req.body;
 
   if (active === undefined) {
-    return res.status(400).json({ success: false, message: 'Parámetro "active" no proporcionado en el cuerpo de la solicitud.' });
+    return res.status(400).json({ success: false, message:  'Parameter "active" not provided in the request body.' });
   }
 
   const result = await togglePatientStatus(patientId, active);

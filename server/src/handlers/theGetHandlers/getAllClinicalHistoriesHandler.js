@@ -1,4 +1,6 @@
-const { getClinicalHistories } = require("../../controllers/theGetControllers/getAllClinicalHistoriesController");
+const {
+  getClinicalHistories,
+} = require("../../controllers/theGetControllers/getAllClinicalHistoriesController");
 
 const getAllClinicalHistoriesHandler = async (req, res) => {
   try {
@@ -6,8 +8,14 @@ const getAllClinicalHistoriesHandler = async (req, res) => {
     const response = await getClinicalHistories(patientId);
     res.status(200).json(response);
   } catch (error) {
-    console.error("Error en el manejador para obtener historias clínicas:", error);
-    res.status(500).json({ success: false, error: "Error interno del servidor", details: error.message });
+    console.error("Error in the handler to get clinical histories:", error);
+    res
+      .status(500)
+      .json({
+        success: false,
+        error: "Internal server error",
+        details: error.message,
+      });
   }
 };
 
