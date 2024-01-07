@@ -1,13 +1,17 @@
+
+
+
 const getAllPatientsHandler = (req, res) => {
   res.status(200).send("Todos los pacientes");
 };
 
-const getPatientDetailsHandler = (req, res) => {
-  res.status(200).send("Detalle del paciente");
-};
-
 const getClinicalHistoriesHandler = (req, res) => {
   res.status(200).send("Historias clínicas de un paciente");
+};
+
+
+const getPatientDetailsHandler = (req, res) => {
+  res.status(200).send("Detalle del paciente");
 };
 
 const getTrackingSessionsHandler = (req, res) => {
@@ -17,7 +21,7 @@ const getTrackingSessionsHandler = (req, res) => {
 
 module.exports = {
   getAllPatientsHandler,
-  getPatientDetailsHandler,
   getClinicalHistoriesHandler,
-  getTrackingSessionsHandler
+  getPatientDetailsHandler, 
+  getTrackingSessionsHandler,
 }

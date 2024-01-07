@@ -25,12 +25,12 @@ const { Patient, ClinicalHistory, TrackingSession } = sequelize.models
 
 
 
-Patient.hasMany(ClinicalHistory); // 1 pcte puede tener varias hc
+Patient.hasMany(ClinicalHistory, { foreignKey: "patientId" }); // 1 pcte puede tener varias hc
 ClinicalHistory.hasMany(TrackingSession); //HC puede tener varias sesiones de seguimiento
 TrackingSession.belongsTo(Patient); // una sesión seguimiento es de un pcte
 Patient.hasMany(TrackingSession); // 1 pcte puede tener varios seguimeintos
 ClinicalHistory.belongsTo(Patient); // 1 hc pertenece a un pcte
-TrackingSession.belongsTo(ClinicalHistory); // 1 seg a 1 hc. 
+TrackingSession.belongsTo(ClinicalHistory, { foreignKey: 'ClinicalHistoryId' }); // 1 seg a 1 hc. 
 
 
 module.exports = {

@@ -4,7 +4,6 @@ const createTrackingSessionHandler = async (req, res) => {
   try {
     const { patientId } = req.params;
     const {
-      idPcte,
       idClinicalHistory,
       date,
       startTime,
@@ -22,7 +21,7 @@ const createTrackingSessionHandler = async (req, res) => {
 
     try {
       const response = await postTrackingSession(
-        idPcte,
+        patientId,
         idClinicalHistory,
         date,
         startTime,
@@ -36,15 +35,17 @@ const createTrackingSessionHandler = async (req, res) => {
         moodRating,
         sessionRating,
         additionalNotes,
-        res  
+        res
       );
+
+      res.status(200).json({ success: true, data: response });
     } catch (error) {
       console.error('Error en el manejador de la sesión de seguimiento:', error);
-      res.status(500).json({ success: false, error: 'Error interno del servidor' });
+      res.status(500).json({ success: false, error: 'Error interno del servidor', details: error.message });
     }
   } catch (error) {
     console.error('Error en el manejador de la sesión de seguimiento:', error);
-    res.status(500).json({ success: false, error: 'Error interno del servidor' });
+    res.status(500).json({ success: false, error: 'Error interno del servidor', details: error.message });
   }
 };
 

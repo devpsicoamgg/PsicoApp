@@ -1,5 +1,5 @@
 const { postClinicalHistory } = require("../../controllers/thePostController/postClinicalHistoryController");
-const { ClinicalHistory, Patient } = require("../../db");
+const { Patient } = require("../../db");
 
 const createClinicalHistoryHandler = async (req, res) => {
   const { patientId } = req.params;
@@ -41,7 +41,6 @@ const createClinicalHistoryHandler = async (req, res) => {
   } = req.body;
 
   try {
-    // Verifica si el paciente existe
     const patient = await Patient.findByPk(patientId);
 
     if (!patient) {
@@ -49,7 +48,7 @@ const createClinicalHistoryHandler = async (req, res) => {
       return res.status(404).json({ error: 'Paciente no encontrado' });
     }
 
-    // Llama a la función que crea la historia clínica
+
     const response = await postClinicalHistory(
       reasonForConsultation,
       physicalAppearanceAndBehavior,
