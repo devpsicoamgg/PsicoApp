@@ -2,38 +2,42 @@ import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import ROUTES from '../../routes/routesHelper';
 import APERTURA from '../../assets/img/creacionUser.png';
+import HCAPERTURA from '../../assets/img/hcApetura.png';
 import CLINICALHISTORY from '../../assets/img/apertura.png';
-import MONITORING from '../../assets/img/seguimiento.png';
+import MONITORING from '../../assets/img/seguimientos.png';
 import INFORMS from '../../assets/img/informes.png';
 import EDITION from '../../assets/img/edicion.png';
 import SETTINGS from '../../assets/img/ajustes.png';
-import BACKGROUND_IMG from '../../assets/img/background.jpg';  
+import BACKGROUND_IMG from '../../assets/img/background.png';  
+import TITLEIMG from '../../assets/img/creacionPcteTitle.png';
 import styles from './homePage.module.css';
 
 function HomePage() {
   return (
     <div className={styles.parent} style={{ backgroundImage: `url(${BACKGROUND_IMG})` }}>
       <div className={styles.div1}>
-        <NavLink to={ROUTES.BASIC_DATA_FORM} className={styles['btn-basic-data-form']}>
-          <img src={APERTURA} alt="BATOS BASICOS" className={styles['img-basic-data-form']} />
-        </NavLink>
-      </div>
+        <NavLink to={ROUTES.BASIC_DATA_FORM}>
+          <img src={APERTURA} alt="BATOS BÁSICOS" className={styles['img-create-user']} />
+          <img src={TITLEIMG} alt="BATOS BÁSICOS" className={styles['title-create-user']} />
+              </NavLink>
+           </div>
 
       <div className={styles.div2}>
-        <Link to={ROUTES.CLINICALHISTORY} className={styles['btn-clinical-history']}>
+        <Link to={ROUTES.CLINICALHISTORY}>
           <img src={CLINICALHISTORY} alt="HISTORIA CLINICA" className={styles['img-clinical-history']} />
+          <img src={HCAPERTURA} alt="APERTURA" className={styles['title-clinical-history']} />
         </Link>
       </div>
 
       <div className={styles.div3}>
-        <Link to={ROUTES.MONITORING} className={styles['btn-monitoring']}>
-          <img src={MONITORING} alt="SEGUIMIENTO" className={styles['img-monitoring']} />
+        <Link to={ROUTES.INFORMS} className={styles['btn-informs']}>
+          <img src={INFORMS} alt="INFORMES SEGUIMIENTO" className={styles['img-informs']} />
         </Link>
       </div>
 
       <div className={styles.div4}>
-        <Link to={ROUTES.INFORMS} className={styles['btn-informs']}>
-          <img src={INFORMS} alt="INFORMES SEGUIMIENTO" className={styles['img-informs']} />
+        <Link to={ROUTES.MONITORING} className={styles['btn-monitoring']}>
+          <img src={MONITORING} alt="SEGUIMIENTO" className={styles['img-monitoring']} />
         </Link>
       </div>
 
