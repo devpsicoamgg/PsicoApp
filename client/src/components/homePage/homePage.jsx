@@ -7,11 +7,12 @@ import MONITORING from '../../assets/img/seguimiento.png';
 import INFORMS from '../../assets/img/informes.png';
 import EDITION from '../../assets/img/edicion.png';
 import SETTINGS from '../../assets/img/ajustes.png';
-import styles from './homePage.module.css'; 
+import BACKGROUND_IMG from '../../assets/img/background.jpg';  
+import styles from './homePage.module.css';
 
 function HomePage() {
   return (
-    <div className={styles.parent}>
+    <div className={styles.parent} style={{ backgroundImage: `url(${BACKGROUND_IMG})` }}>
       <div className={styles.div1}>
         <NavLink to={ROUTES.BASIC_DATA_FORM} className={styles['btn-basic-data-form']}>
           <img src={APERTURA} alt="BATOS BASICOS" className={styles['img-basic-data-form']} />

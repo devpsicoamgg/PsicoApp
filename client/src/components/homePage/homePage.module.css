@@ -3,11 +3,9 @@
 .parent {
   margin: 0;
   padding: 0;
-  background-image: url("../../assets/img/background.jpg");
-  background-size: cover;
-  background-position: center;
+  background-size: contain; 
+  background-position: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; 
   height: 100%; 
   width: 100%; 
   display: flex;
@@ -31,7 +29,7 @@
   content: ACA;
   color: aliceblue;
   transform: rotate(-25deg) translate3d(0, -5px, 0) scale(1.2);
-  box-shadow: 50px 220px 60px rgba(255, 0, 0), 390px 280px 60px rgba(26, 255, 0, 0.746);
+  box-shadow: 30px 200px 60px rgba(24, 0, 207, 0.746), 390px 280px 60px rgba(26, 255, 0, 0.746);
 }
 
 .img-clinical-history {
