@@ -1,0 +1,535 @@
+:root {
+  background-color: #242424;
+}
+
+
+.clinical-history-container {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  font-family:  sans-serif, Helvetica, Arial; 
+  line-height: 1.5;
+  font-weight: 400;
+  width: 102rem;
+  height: 41.345rem;
+  margin: 0 auto;
+  text-align: center;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424ef;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.519), 10px 10px 100px rgb(30, 241, 167);
+}
+
+/* SearchPatientResults.css */
+
+.patient-info-table {
+margin-top: 0.8%;
+  width: 100%;
+  background-color: #fff; 
+  box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.772);
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center; 
+}
+
+.patient-info-table td {
+  border: 1px solid #c8c7c7; /* Borde de 1 píxel con color #242424 */
+  padding: 2px; /* Espaciado interior reducido */
+  text-align: center; /* Centrar el contenido de las celdas */
+  background-color: transparent; /* Fondo transparente para las celdas de datos */
+  color: #242424; /* Texto en color #242424 */
+  font-size: 12px; /* Tamaño de fuente más pequeño */
+}
+
+.patient-info-table tr:nth-child(even) {
+  background-color: #f2f2f2; /* Color de fondo para filas pares */
+}
+
+.patient-info-table th {
+  background-color: #414141; /* Color de fondo para encabezados */
+  color: white;
+  padding: 2px; /* Espaciado interior reducido */
+  text-align: center; /* Centrar el contenido de los encabezados */
+  font-size: 12px; /* Tamaño de fuente más pequeño */
+}
+
+
+.patient-info-table td.title-table {
+  font-weight: bold; /* Hace que el texto sea negrita */
+}
+
+
+.patient-info-table td.show-table-result{
+  font-style: italic; /* Hace que el texto sea cursiva */
+}
+
+
+.input-area-others-indicators {
+  width: 750px;
+  height: 90px;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 9); 
+  border: 1px solid #ccc; 
+  margin-bottom: 12px; 
+  margin-top: 12px; 
+}
+
+
+.search-input {
+  width: 250px;
+  height: 26px;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 9); 
+  border: 1px solid #ccc; 
+}
+
+textarea#transcriptionInput,
+.transcriptionInput {
+  width: 97%;
+  color: #242424; 
+  font-size: 18px; 
+  font-style: italic;
+  text-shadow: 3px 6px 6px rgb(58, 164, 44);
+  font-family: sans-serif, Verdana,  Tahoma;
+}
+
+
+.label-dx {
+  font-size: 16px; 
+  font-weight: bold; 
+  margin-bottom: 8px; 
+  color: #333; 
+
+}
+
+
+
+.summary-data-container,
+.diagnoses-impression-container,
+.others-indicators,
+.consultation-reason,
+.mental-examination
+{
+  background-color: #f5f5f5; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  padding: 5px; 
+  margin: 25px 10px; 
+  text-align: center; 
+  color: #242424; 
+  box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.772); 
+}
+
+
+
+
+.button-write {
+  background-color: #242424; 
+  color: #fff; 
+  border: none;
+  padding: 10px 40px 10px 20px; 
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-image 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.1);
+  position: relative; 
+  background-image: url("../../assets/img/whitewritehov.png"); 
+  background-size: 18px 17px; 
+  background-repeat: no-repeat; 
+  background-position: 89% center; 
+}
+
+.button-write:hover {
+  background-color: #fff; 
+  color: #242424; 
+  border: solid 1px #242424;
+  transform: translateY(-2px); 
+  background-image: url("../../assets/img/whitewrite.png"); 
+ 
+}
+
+.btn-show-mental-examination{
+  background-color: #242424; 
+  color: #fff; 
+  border: none;
+  padding: 10px 40px 10px 20px; 
+  margin: 5px;
+  background-size: 38px 40px; 
+  background-image: url("../../assets/img/mentalexamination.png");  
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 17px;
+  text-shadow: 1px 1px 9px rgb(119, 119, 119);
+  transition: background-image 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.1);
+  position: relative; 
+  background-size: 24px 24px; 
+  background-repeat: no-repeat; 
+  background-position: 90% center; 
+  width: 250px;
+}
+
+
+.btn-show-diagnoses-data {
+  background-color: #242424; 
+  color: #fff; 
+  border: none;
+  padding: 10px 40px 10px 20px; 
+  margin: 5px;
+  background-size: 38px 40px; 
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 17px;
+  text-shadow: 1px 1px 9px rgb(119, 119, 119);;
+  transition: background-image 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.1);
+  position: relative; 
+  background-size: 24px 24px; 
+  background-repeat: no-repeat; 
+  background-position: 90% center; 
+  width: 250px;
+}
+
+
+.btn-show-other-indicators {
+  background-color: #242424; 
+  color: #fff; 
+  border: none;
+  padding: 10px 40px 10px 20px; 
+  margin: 5px;
+  font-size: 17px;
+  text-shadow: 1px 1px 9px rgb(119, 119, 119);;
+  background-size: 38px 40px; 
+  background-image: url("../../assets/img/compilacion.png");  
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-image 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.1);
+  position: relative; 
+  background-size: 24px 24px; 
+  background-repeat: no-repeat; 
+  background-position: 90% center; 
+  width: 250px;
+}
+
+.btn-show-consultation-reason {
+  background-color: #242424; 
+  color: #fff; 
+  border: none;
+  padding: 10px 40px 10px 20px; 
+  margin: 5px;
+  width: 250px;
+  background-size: 38px 40px; 
+  background-image: url("../../assets/img/consulta.png");  
+  font-size: 17px;
+  text-shadow: 1px 1px 9px rgb(119, 119, 119);;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-image 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.1);
+  position: relative; 
+  background-size: 24px 24px; 
+  background-repeat: no-repeat; 
+  background-position: 90% center; 
+}
+
+
+.btn-show-diagnoses-impression {
+  background-color: #242424; 
+  color: #fff; 
+  border: none;
+  padding: 10px 40px 10px 20px; 
+  margin: 5px;
+  width: 250px;
+  background-size: 38px 40px; 
+  background-image: url("../../assets/img/diagnostico.png");  
+  font-size: 17px;
+  text-shadow: 1px 1px 9px rgb(119, 119, 119);;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-image 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.1);
+  position: relative; 
+  background-size: 24px 24px; 
+  background-repeat: no-repeat; 
+  background-position: 90% center; 
+}
+
+
+.btn-close-diagnoses-data,
+.btn-close-other-indicators,
+.btn-close-diagnoses-impression,
+.btn-close-consultation-reason,
+.btn-consultation-reason-close {
+  background-color: #242424; 
+  color: #fff; 
+  border: none;
+  padding: 10px 40px 10px 20px; 
+  margin: 5px;
+  background-image: url("../../assets/img/cerrar.png");  
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-image 0.3s ease-in-out; /* Cambiamos solo background-image */
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.1);
+  position: relative;
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: 80% center;
+}
+
+.btn-close-other-indicators:hover,
+.btn-close-diagnoses-impression:hover,
+.btn-close-consultation-reason:hover,
+.btn-consultation-reason-close:hover {
+  background-image: url("../../assets/img/cerrarhov.png"); /* Cambia la imagen de fondo al hacer hover */
+}
+
+
+.btn-save {
+  background-color: #242424; 
+  color: #fff; 
+  border: none;
+  padding: 10px 40px 10px 20px; 
+  margin: 5px;
+  margin-top: 10px;
+  margin-bottom: 1px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-image 0.3s ease-in-out; /* Cambiamos solo background-image */
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.1);
+  position: relative;
+  background-image: url("../../assets/img/guardar.png");  
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: 90% center;
+}
+
+.btn-save:hover {
+  background-image: url("../../assets/img/guardarhov.png"); 
+}
+
+
+.next-btn {
+  background-color: #242424; 
+  color: #fff; 
+  border: none;
+  padding: 10px 40px 10px 20px; 
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-image 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.1);
+  position: relative; 
+  background-image: url("../../assets/img/nextwithe.png");  
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: 90% center;
+}
+
+
+.before-btn {
+  background-color: #242424; 
+  color: #fff; 
+  border: none;
+  padding: 10px 30px 10px 58.390px;
+  margin-left: 15px;
+  margin: 5px;
+  margin-top: 1px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-image 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.1);
+  position: relative;
+  background-image: url("../../assets/img/backwithe.png");  
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: 10% center;
+}
+
+.before-btn:hover {
+  background-image: url("../../assets/img/backblack.png");
+  background-color: #fff; 
+  color: #242424; 
+  border: solid 1px #242424;
+  transform: translateY(-2px); 
+}
+
+
+
+.next-btn:hover {
+  background-image: url("../../assets/img/nextblack.png");
+  background-color: #fff; 
+  color: #242424; 
+  border: solid 1px #242424;
+  transform: translateY(-2px); 
+}
+
+.options-choices,
+.options-choices-dbamemoria {
+  background-color: #242424;; 
+  color: #fff; 
+  font-size: 11px;
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px 10px 10px 10px;
+  border: solid 1px #242424;
+  transform: translateY(-2px); 
+  background-size: 38px 40px; 
+  width: 450px;
+}
+
+
+.porteyapariencia {
+  margin-bottom: 20px;
+}
+
+
+.checkboxport {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+
+}
+
+
+.checkboxport input[type="checkbox"] {
+  margin-right: 8px;
+  width: 16px; 
+  height: 16px; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
+}
+
+.other-indicators-container {
+  border: 1px solid #3d3d3d;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.9); 
+  border-radius: 5px;
+  margin-left: 12px;
+  margin-right: 12px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+.other-indicators-container input[type="text"] {
+  width: 78%;
+  padding: 10px;
+  border: 1px solid #3d3d3d;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.9); 
+  border-radius: 5px;
+}
+
+.porteyaparienciacontainer {
+  border: 1px solid #3d3d3d;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.9); 
+  border-radius: 5px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.porteyapariencia input[type="text"] {
+  width: 78%;
+  padding: 10px;
+  border: 1px solid #3d3d3d;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.9); 
+  border-radius: 5px;
+}
+
+
+.category-title-bold {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 180, 0, 0.8); 
+}
+
+.category-title {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 180, 0, 0.8); 
+}
+
+.results {
+  margin: 20px auto;
+  padding: 15px;
+  max-width: 500px;
+  border-radius: 4px;
+  position: relative; 
+}
+
+
+
+.results p {
+  margin: 0;
+  font-size: 16px;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  position: relative; 
+  z-index: 28; 
+}
+
+.cuantitativa {
+  background-color: rgba(0, 17, 48);
+}
+
+.cualitativa {
+  background-color: rgba(160, 0, 80);
+}
+
+
+
+.diagnoses-impression {
+  display: flex;
+  border: 1px solid #ccc; 
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px;
+}
+
+.diagnoses-impression .label-dx {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 23px;
+  margin-left: 35px;
+  font-weight: bold;
+}
+
+
+.diagnoses-impression .label-dx-pp {
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 65px;
+  margin-left: 35px;
+  font-weight: bold;
+}
+
+.diagnoses-impression .input-diagnosis {
+  width: 350px;
+  border-color: #242424;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
+
+}
+
+.diagnoses-impression .label-dx-choices {
+  width: 160px;
+  margin-left: 5%;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 9); 
+  border: 1px solid #ccc; 
+  height: auto;
+  border-radius: 5px;
+  background-color: #242424;
+  color: #fff;
+}
+
+
+
