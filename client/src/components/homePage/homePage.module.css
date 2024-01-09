@@ -1,135 +1,191 @@
 .parent {
   margin: 0;
   padding: 0;
-  background-size: contain; 
+  margin-top: 2%;
+  background-size: contain;
   background-position: cover;
   background-repeat: no-repeat;
-  height: 100%; 
-  width: 100%; 
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  z-index: -4;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
+
+.img-create-user,
+.title-create-user,
+.img-clinical-history,
+.title-clinical-history,
+.img-trackings,
+.title-trackings, 
+.img-informs, 
+.img-editing, 
+.title-informs,
+.img-wsp,
+.img-settings {
+  position: relative;
+  width: 37%;
+  transition: transform 0.6s, background-color 0.6s;
+}
+
+
 .img-create-user {
-  margin-top: 3%;
-  margin-left: 18%;
-  width: 7%;
-  transition: transform 0.6s, background-color 0.6s; 
+  width: 37%;
+  margin-top: 8%;
+  margin-left: 108%;
 }
 
 .title-create-user {
-  margin-top: 3%;
-  margin-bottom: 1%;
-  margin-right: 14%;
-  width: 13%;
-  opacity: 0;   
-  transform: perspective(500px) rotateY(0); 
-  transition: opacity 0.6s, transform 0.6s, width 0.6s, color 0.6s; 
+  width: 1%;
+  margin-top: -158%;
+  margin-right: -118%;
+  opacity: 0;
+  transform: perspective(500px) rotateY(0);
+  transition: opacity 0.6s, transform 0.6s, width 0.6s, color 0.6s;
 }
 
 .img-create-user:hover {
   transform: rotate(-25deg) translate3d(0, -5px, 0) scale(1.2);
-  box-shadow: 30px 200px 100px rgba(24, 0, 207, 0.746), 390px 380px 100px rgba(26, 255, 0, 0.746);
+  box-shadow: 30px 200px 100px rgba(24, 0, 207), 300px 320px 100px rgba(26, 230, 0);
 }
 
 .img-create-user:hover + .title-create-user {
   opacity: 1;
-  transform: translate3d(140%, 260px, 10px);
-  width: 12%;
-  border-radius: 3px; 
+  transform: translate3d(190%, 580%, 0px);
+  border-radius: 3px;
+  width: 50%;
+  filter: brightness(50%) saturate(100%) invert(87%) sepia(92%) saturate(1190%) hue-rotate(5deg) brightness(104%) contrast(104%);
 }
 
 
 .img-clinical-history {
-  margin-bottom: 86%;
-  margin-left: 7%;
-  width: 7%;
-  transition: transform 0.3s, background-color 3.9s; 
+  width: 37%;
+  margin-top: 36%;
+  margin-left: -38%;
 }
 
 .title-clinical-history {
-  margin-bottom: 87%;
+  width: 1%;
+  margin-bottom: 7%;
   margin-right: 7%;
-  width: 13%;
-  opacity: 0;   
-  transform: perspective(500px) rotateY(0); 
-  transition: opacity 0.6s, transform 0.6s, width 0.6s, color 0.6s; 
+  opacity: 0;
+  transform: perspective(500px) rotateY(0);
+  transition: opacity 0.6s, transform 0.6s, width 0.6s, color 0.6s;
 }
 
 .img-clinical-history:hover {
   transform: rotate(-25deg) translate3d(0, -5px, 0) scale(1.2);
-  box-shadow:  220px 210px 80px rgba(238, 255, 0, 0.837), 410px 320px 100px  rgb(255, 0, 225);
+  box-shadow: 220px 200px 80px rgba(238, 255, 0), 410px 280px 100px rgb(255, 0, 225);
 }
 
 .img-clinical-history:hover + .title-clinical-history {
   opacity: 1;
-  transform: translate3d(240%, 160px, 10px);
-  width: 12%;
-  border-radius: 3px; 
+  transform: translate3d(240%, 235px, 10px);
+  border-radius: 3px;
+  width: 60%;
+  filter: brightness(50%) saturate(100%) invert(87%) sepia(92%) saturate(1190%) hue-rotate(85deg) brightness(104%) contrast(104%);
 }
 
-
-
-.img-monitoring {
-  margin-top: -63rem;
-  margin-bottom: 23rem;
-  margin-left: 7rem;
-  width: 7%;
-  background-color: transparent;
-  z-index: -2;
-  transition: transform 0.3s, background-color 3.9s; 
+.img-trackings {
+  margin-top: 79%;
+  margin-left: -160%;
+  width: 37%;
 }
 
-.img-monitoring:hover {
-  transform: rotate(45deg) translate3d(0, -5px, 0) scale(1.2);
-  box-shadow:  -180px 390px 80px rgba(255, 132, 0, 0.9), -180px 390px  90px  rgb(255, 0, 191);
+.title-trackings {
+  width: 1%;
+  opacity: 0;
+  transform: perspective(500px) rotateY(0);
+  transition: opacity 0.6s, transform 0.6s, width 0.6s, color 0.6s;
 }
 
+.img-trackings:hover {
+  transform: rotate(-52deg) translate3d(0, -5px, 0) scale(1.2);
+  box-shadow: 230px 280px 100px rgba(255, 0, 0), 300px 320px 100px rgba(0, 255, 247);
+}
+
+.img-trackings:hover + .title-trackings {
+  opacity: 1;
+  transform: translate3d(243%, 210%, 1px);
+  border-radius: 3px;
+  width: 70%;
+  filter: brightness(50%) saturate(100%) invert(87%) sepia(92%) saturate(1190%) hue-rotate(1000deg) brightness(104%) contrast(104%);
+}
 
 
 .img-informs {
-  margin-top: -41rem;
-  margin-bottom: 41.3rem;
-  margin-left: 66rem;
-  width: 7%;
-  background-color: transparent;
-  z-index: -2;
-  transition: transform 0.3s, background-color 3.9s; 
+  width: 37%;
+  margin-top: 126%;
+  margin-left: -245%;
 }
 
+.title-informs {
+  width: 1%;
+  opacity: 0;
+  transform: perspective(500px) rotateY(0);
+  transition: opacity 0.6s, transform 0.6s, width 0.6s, color 0.6s;
+}
+
+
 .img-informs:hover {
-  transform: rotate(-65deg) translate3d(0, -5px, 0) scale(1.2);
-  box-shadow:  620px 620px 80px rgba(15, 0, 228, 0.971), 620px 620px 89px  rgb(255, 255, 255);
+  transform: rotate(-55deg) translate3d(0, -5px, 0) scale(1.2);
+  box-shadow: 280px 180px 80px rgb(252, 40, 103), 270px 320px 100px rgb(0, 165, 2);
+}
+
+.img-informs:hover + .title-informs {
+  width: 50%;
+  opacity: 1;
+  transform: translate3d(339%, -140%, 0);
 }
 
 .img-editing {
-  margin-top: -63rem;
-  margin-bottom: 20rem;
-  margin-left: 64rem;
-  width: 7%;
-  background-color: transparent;
-  z-index: -2;
-  transition: transform 0.3s, background-color 3.9s; 
+  width: 37%;
+  margin-top: 9%;
+  margin-left: 101%;
+}
+
+.title-editing {
+  width: 1%;
+  opacity: 0;
+  transform: perspective(500px) rotateY(0);
+  transition: opacity 0.6s, transform 0.6s, width 0.6s, color 0.6s;
 }
 
 .img-editing:hover {
-  transform: rotate(65deg) translate3d(0, -5px, 0) scale(1.2);
-  box-shadow:  -420px 720px 80px rgb(10, 0, 152), -420px 710px 100px  rgb(201, 8, 8);
+  transform: rotate(25deg) translate3d(0, -5px, 0) scale(1.2);
+  box-shadow: -312px 290px 100px rgb(90, 0, 192), -160px 320px 100px rgb(96, 255, 183);
 }
 
-.img-settings {
-  margin-top: -68rem;
-  margin-bottom: 35rem;
-  margin-left: 66rem;
-  width: 7%;
-  background-color: transparent;
-  z-index: -2;
-  transition: transform 0.3s, background-color 3.9s; 
+.img-editing:hover + .title-editing {
+  opacity: 1;
+  width: 80%;
+  transform: translate3d(-200%, 410%, 1px);
+  filter: brightness(50%) saturate(100%) invert(87%) sepia(92%) saturate(1190%) hue-rotate(330deg) brightness(104%) contrast(104%);
 }
 
-.img-settings:hover { 
-  transform: rotate(65deg) translate3d(0, -5px, 0) scale(1.2);
-  box-shadow:  -180px 320px 80px rgba(255, 255, 255, 0.863), -180px 320px 80px   rgba(248, 204, 10, 0.409);
+.img-wsp {
+  width: 37%;
+  margin-top: 48%;
+  margin-left: 31%; 
 }
+
+.title-wsp {
+  width: 1%;
+  opacity: 0;
+  transform: perspective(500px) rotateY(0);
+  transition: opacity 0.6s, transform 0.6s, width 0.6s, color 0.6s;
+}
+
+.img-wsp:hover {
+  transform: rotate(-52deg) translate3d(0, -5px, 0) scale(1.2);
+  box-shadow: -21rem -240px 100px rgba(255, 0, 0), -410px -240px 100px rgba(0, 255, 247);
+}
+
+.img-wsp:hover + .title-wsp {
+  opacity: 1;
+  width: 80%;
+  transform: translate3d(-260%, 540%, 1px);
+  filter: brightness(50%) saturate(100%) invert(87%) sepia(92%) saturate(1190%) hue-rotate(90deg) brightness(104%) contrast(104%);
+}
+
