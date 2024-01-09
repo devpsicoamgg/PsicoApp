@@ -14,6 +14,7 @@ import SETTINGS from "../../assets/img/ajustes.png";
 import WSP from "../../assets/img/wsp.png";
 import TITLEWSP from "../../assets/img/segment.png";
 import BACKGROUND_IMG from "../../assets/img/background.png";
+import OTHERSHERRA from "../../assets/img/background.png";
 import TITLEIMG from "../../assets/img/creacionPcteTitle.png";
 import styles from "./homePage.module.css";
 
@@ -103,6 +104,21 @@ function HomePage() {
           />
           <img
             src={TITLEWSP}
+            alt="Mensajería por wsp"
+            className={styles["title-wsp"]}
+          />
+        </Link>
+      </div>
+
+      <div className={styles.div6}>
+        <Link to={ROUTES.BASIC_DATA_EDITING}>
+          <img
+
+            alt="Mensajería por wsp"
+            className={styles["img-wsp"]}
+          />
+          <img
+
             alt="Mensajería por wsp"
             className={styles["title-wsp"]}
           />
