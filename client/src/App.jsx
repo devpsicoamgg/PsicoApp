@@ -9,6 +9,7 @@ import EditAndDeleteDataForm from './components/editAndDelete/EditAndDelete';
 import Settings from './components/settings/Settings';
 import ROUTES from './routes/routesHelper';
 import LogingForm from './components/loging/logingForm';
+import Segmentation from './components/Segmentation/Segmentation';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path={ROUTES.INFORMS} element={<Informs />} />
         <Route path={ROUTES.BASIC_DATA_EDITING} element={<EditAndDeleteDataForm />} />
         <Route path={ROUTES.SETTINGS} element={<Settings />} />
+        <Route path={ROUTES.SEGMENTATION} element={<Segmentation />} />
       </Routes>
 
       

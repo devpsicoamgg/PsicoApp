@@ -96,7 +96,7 @@ function HomePage() {
       </div>
 
       <div className={styles.div6}>
-        <Link to={ROUTES.BASIC_DATA_EDITING}>
+        <Link to={ROUTES.SEGMENTATION}>
           <img
             src={WSP}
             alt="Mensajería por wsp"
