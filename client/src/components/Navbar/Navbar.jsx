@@ -1,105 +1,185 @@
-import { NavLink, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import ROUTES from "../../routes/routesHelper";
-import APERTURA from "../../assets/img/creacionUser.png";
-import CLINICALHISTORY from "../../assets/img/apertura.png";
-import MONITORING from "../../assets/img/seguimientos.png";
-import TRAKINGIMG from "../../assets/img/hcApetura.png";
-import INFORMS from "../../assets/img/informes.png";
-import EDITION from "../../assets/img/edicion.png";
-import SETTINGS from "../../assets/img/ajustes.png";
-import WSP from "../../assets/img/wsp.png";
-import VARIOUS from "../../assets/img/various.png";
-
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <>
-      <div className={styles.containerNavbar}>
-        <p>
-          <Link to={ROUTES.BASIC_DATA_FORM}>
-            <img
-              src={APERTURA}
-              alt="BATOS BÁSICOS"
-              className={styles["img-create-user"]}
-            />
-          </Link>
-        </p>
-
-        <p>
-          <Link to={ROUTES.CLINICALHISTORY}>
-            <img
-              src={CLINICALHISTORY}
-              alt="HISTORIA CLINICA"
-              className={styles["img-clinical-history"]}
-            />
-          </Link>
-        </p>
-
-        <p>
-          <Link to={ROUTES.MONITORING}>
-            <img
-              src={MONITORING}
-              alt="INFORMES SEGUIMIENTO"
-              className={styles["img-trackings"]}
-            />
-          <img src={TRAKINGIMG} alt="Seguimiento" className={styles.title} />
-          </Link>
-        </p>
-
-        <p>
-          <Link to={ROUTES.INFORMS}>
-            <img
-              src={INFORMS}
-              alt="INFORMES"
-              className={styles["img-informs"]}
-            />
-          </Link>
-        </p>
-
-      </div>
-<div>
-<p>
-        <Link to={ROUTES.SETTINGS}>
-          <img
-            src={SETTINGS}
-            alt="AJUSTES"
-            className={styles["img-settings"]}
-          />
+      <nav id="test" className={styles.navBar}>
+        <Link to={ROUTES.HOME} className={styles.title}>
+          <span className={styles.logoOne}>Psy</span><span className={styles.logoTwo}>App</span> <span></span>
         </Link>
-        </p>
 
-        <p>
-        <Link to={ROUTES.BASIC_DATA_EDITING}>
-          <img
-            src={EDITION}
-            alt="EDICIÓN DE DATOS BÁSICOS"
-            className={styles["img-editing"]}
-          />
-        </Link>
-        </p>
-        
+        <div className={styles.menu} onClick={toggleMenu}>
+         <span></span>
+         <span> </span>
+         <span></span>
+        </div>
 
-<p> 
-        <Link to={ROUTES.SEGMENTATION}>
-          <img
-            src={WSP}
-            alt="Mensajería por wsp"
-            className={styles["img-wsp"]}
-          />
-        </Link>
-        </p>
+        <ul style={menuOpen ? { display: 'flex' } : { }}>
+          <li>
+            <NavLink
+              to={ROUTES.BASIC_DATA_FORM}
+              style={({ isActive}) => {
+                return {
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  textAlign: 'center',
+                  background: isActive ? 'rgba(255, 255, 255, 0.1)' : '',
+                  backdropFilter: isActive ? 'blur(5px)' : 'none',
+                  padding: '12px 12px', 
+                  borderRadius: '18px',  
+                  lineHeight: '1.2',    
+                };
+              }}>
+              CREAR <br/> USUARIO <span></span>
+            </NavLink>
+          </li>
 
-<p> 
-        <Link to={ROUTES.VARIOUS}>
-          <img src={VARIOUS} alt="Varios 7" className={styles["img-various"]} />
-        </Link>
-        </p>
+          
 
-      
+          <li>
+            <NavLink to={ROUTES.CLINICALHISTORY}
+             style={({ isActive}) => {
+              return {
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center',
+                background: isActive ? 'rgba(255, 255, 255, 0.1)' : '',
+                backdropFilter: isActive ? 'blur(5px)' : 'none',
+                padding: '12px 12px', 
+                borderRadius: '18px',  
+                lineHeight: '1.2',    
+              };
+            }}>
+              HISTORIA <br/> CLÍNICA <span></span>
+            </NavLink>
+          </li>
 
- </div>
+          <li>
+            <NavLink to={ROUTES.MONITORING}
+             style={({ isActive}) => {
+              return {
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center',
+                background: isActive ? 'rgba(255, 255, 255, 0.1)' : '',
+                backdropFilter: isActive ? 'blur(5px)' : 'none',
+                padding: '12px 12px', 
+                borderRadius: '18px',  
+                lineHeight: '1.2',    
+              };
+            }}>
+              SEGUIMIENTO <br/> USUARIO <span></span>
+            </NavLink>
+          </li>
 
+          <li>
+            <NavLink to={ROUTES.INFORMS}
+             style={({ isActive}) => {
+              return {
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center',
+                background: isActive ? 'rgba(255, 255, 255, 0.1)' : '',
+                backdropFilter: isActive ? 'blur(5px)' : 'none',
+                padding: '12px 12px', 
+                borderRadius: '18px',  
+                lineHeight: '1.2',    
+              };
+            }}>
+              INFORMES <br/> USUARIO<span></span>
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink to={ROUTES.SETTINGS}
+             style={({ isActive}) => {
+              return {
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center',
+                background: isActive ? 'rgba(255, 255, 255, 0.1)' : '',
+                backdropFilter: isActive ? 'blur(5px)' : 'none',
+                padding: '12px 12px', 
+                borderRadius: '18px',  
+                lineHeight: '1.2',    
+              };
+            }}>
+              APOYOS <br/> TERAPÉUTICOS<span></span>
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink to={ROUTES.BASIC_DATA_EDITING}
+             style={({ isActive}) => {
+              return {
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center',
+                background: isActive ? 'rgba(255, 255, 255, 0.1)' : '',
+                backdropFilter: isActive ? 'blur(5px)' : 'none',
+                padding: '12px 12px', 
+                borderRadius: '18px',  
+                lineHeight: '1.2',    
+              };
+            }}>
+              EDICIÓN <br/> USUARIO <span></span>
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink to={ROUTES.SEGMENTATION}
+             style={({ isActive}) => {
+              return {
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center',
+                background: isActive ? 'rgba(255, 255, 255, 0.1)' : '',
+                backdropFilter: isActive ? 'blur(5px)' : 'none',
+                padding: '12px 12px', 
+                borderRadius: '18px',  
+                lineHeight: '1.2',    
+              };
+            }}>
+              SEGMENTACIÓN <br/> CLÍNICA<span></span>
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink to={ROUTES.VARIOUS}
+             style={({ isActive}) => {
+              return {
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center',
+                background: isActive ? 'rgba(255, 255, 255, 0.1)' : '',
+                backdropFilter: isActive ? 'blur(5px)' : 'none',
+                padding: '12px 12px', 
+                borderRadius: '18px',  
+                lineHeight: '1.2',    
+              };
+            }}>
+              AJUSTES <br/>  VARIOS <span></span>
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
     </>
   );
 };

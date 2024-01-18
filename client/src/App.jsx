@@ -8,16 +8,20 @@ import Informs from "./components/informs/Informs";
 import EditAndDeleteDataForm from "./components/editAndDelete/EditAndDelete";
 import Settings from "./components/settings/Settings";
 import ROUTES from "./routes/routesHelper";
-import LogingForm from "./components/loging/logingForm";
+import LogingForm from "./components/loging/LogingForm"; 
 import Segmentation from "./components/Segmentation/Segmentation";
 import Various from "./components/Various/Various";
+import Navbar from "./components/Navbar/Navbar";
+import "./App.css"; 
 
 function App() {
   return (
     <>
+
+<Navbar />
       <Routes>
-        <Route path={ROUTES.LOGIN} element={<LogingForm />} />
         <Route path={ROUTES.HOME} element={<HomePage />} />
+        <Route path={ROUTES.LOGIN} element={<LogingForm />} />
         <Route path={ROUTES.BASIC_DATA_FORM} element={<BasicDataForm />} />
         <Route path={ROUTES.CLINICALHISTORY} element={<ClinicalHistory />} />
         <Route path={ROUTES.MONITORING} element={<Monitoring />} />
