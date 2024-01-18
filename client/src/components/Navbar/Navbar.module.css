@@ -8,6 +8,7 @@
 }
 
 
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -22,6 +23,7 @@ nav {
   backdrop-filter: blur(5px);
   border-radius: 19px;
   align-items: center;
+  border-bottom: 2px solid rgba(255, 255, 255, .2);
 }
 
 
@@ -76,7 +78,6 @@ nav .menu {
   height: 2rem;
   cursor: pointer;
 }
-
 
 nav ul.open {
   display: flex;

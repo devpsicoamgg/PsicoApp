@@ -12,7 +12,7 @@ const LogingForm = () => {
        </div>
 
        <div className={styles.inputGroup}>
-      <input className={styles.input} required type={"text"} id={"secondName"} ></input>
+      <input className={styles.input} required type={"text"} id={"secondName"}></input>
       <label className={styles.label} htmlFor={"secondName"}> Segundo nombre </label>
        </div>
 

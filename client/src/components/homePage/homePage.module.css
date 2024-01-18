@@ -1,14 +1,13 @@
 
 
 .parent {
+  display: flex;
   margin: 0;
   padding: 0;
   background-size: contain;
-  background-position: cover;
   background-repeat: no-repeat;
-  height: 100vh;
-  position: static;
+  position:unset;
+  height: 84vh;
   width: 100vw;
-  display: flex;
   margin-top: 0.1%;
 }

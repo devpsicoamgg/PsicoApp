@@ -8,7 +8,7 @@ function HomePage() {
   
   return (
     <>
-    <div 
+    <div
     className={styles.parent} 
     style={{ backgroundImage: `url(${BACKGROUND_IMG})`, backgroundPosition: 'center' }}>
  

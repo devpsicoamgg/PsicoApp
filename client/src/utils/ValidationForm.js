@@ -4,7 +4,7 @@ const validationForm = (form) => {
 
   if (!form.firstName) {
     errors.firstName =
-      "El campo no puede estar vacío y no debe tener espacios ni números";
+      "El campo no puede estar vacío";
   } else if (/\s/.test(form.firstName)) {
     errors.firstName = "El campo no debe contener espacios";
   } else if (/\d/.test(form.firstName)) {
@@ -17,7 +17,7 @@ const validationForm = (form) => {
 
   if (!form.firstSurName) {
     errors.firstSurName =
-      "El campo no puede estar vacío y no debe tener espacios ni números";
+      "El campo no puede estar vacío";
   } else if (/\s/.test(form.firstSurName)) {
     errors.firstSurName = "El campo no debe contener espacios";
   } else if (/\d/.test(form.firstSurName)) {
@@ -31,19 +31,28 @@ const validationForm = (form) => {
   if (!form.kindDoc) {
     errors.kindDoc = "Debes seleccionar un tipo de documento";
   }
+  
 
   if (!form.docNumber) {
-    errors.docNumber = "El campo no puede estar vacío y debe ser un número";
-  } else if (!/^\d+$/.test(form.docNumber)) {
-    errors.docNumber = "El campo debe contener solo números";
+    errors.docNumber = "El campo no puede estar vacío";
   } else {
-    const parsedNumber = parseFloat(form.docNumber);
-    if (isNaN(parsedNumber)) {
-      errors.docNumber = "El número no es válido";
-    } else if (parsedNumber <= 0) {
-      errors.docNumber = "El número debe ser mayor que 0";
+    const cleanedNumber = form.docNumber.replace(/\s|-/g, "");
+  
+    // Verificar si el número contiene solo dígitos después de limpiarlo
+    if (!/^\d+$/.test(cleanedNumber)) {
+      errors.docNumber = "El campo debe contener solo números";
+    } else {
+      const numericValue = parseInt(cleanedNumber, 10);
+  
+      // Verificar si el número es menor que 0
+      if (numericValue <= 0) {
+        errors.docNumber= "El número debe ser mayor o igual a 0";
+      }
     }
   }
+  
+  
+  
 
   if (!form.nataleDate) {
     errors.nataleDate = "El campo no puede estar vacío.";
@@ -55,7 +64,7 @@ const validationForm = (form) => {
 
   if (!form.disability) {
     errors.disability =
-      "Debes seleccionar si el consultante presenta discapacidad";
+      "Debes seleccionar una opción";
   }
 
   if (!form.gender) {
@@ -63,10 +72,11 @@ const validationForm = (form) => {
   }
 
   if (!form.occupation) {
-    errors.occupation =
-      "El campo no puede estar vacío y no debe tener espacios ni números";
+    errors.occupation = "El campo no puede estar vacío";
+  } else if (/\d/.test(form.occupation)) {
+    errors.occupation = "El campo no debe contener números";
   }
-
+  
   if (!form.email) {
     errors.email = "El campo no puede estar vacío";
   } else if (!emailRegex.test(form.email)) {
@@ -76,7 +86,6 @@ const validationForm = (form) => {
   if (!form.phoneNumber) {
     errors.phoneNumber = "El campo no puede estar vacío";
   } else {
-    // Remover espacios en blanco y guiones del número para normalizarlo
     const cleanedNumber = form.phoneNumber.replace(/\s|-/g, "");
 
     // Verificar si el número contiene solo dígitos después de limpiarlo

@@ -3,7 +3,6 @@ import { useForm } from "../../Hooks/UseForms.js";
 import styles from "./basicDataForm.module.css";
 import validationForm from "../../utils/ValidationForm";
 import closeImage from "../../assets/img/close1.png";
-import title from "../../assets/img/titleMod1.png";
 import { helpHttp } from "../../Helpers/helpHttps.js";
 
 const url = "http://localhost:3000/patients";
@@ -78,12 +77,6 @@ const BasicDataForm = () => {
       <div className={styles.basicDataForm}>
         <fieldset className={styles.fieldset}>
           <form onSubmit={(e) => handleSubmit(e)}>
-            <img
-              src={closeImage}
-              className={styles.closeBtn}
-              onClick={handleCloseForm}
-              alt="cerrar"
-            />
             {/*COLUMNA 1*/}
             <div id="form-column-one" className={styles.formcolumn}>
               {/*PRIMER NOMBRE COL 1*/}
@@ -110,7 +103,7 @@ const BasicDataForm = () => {
                   placeholder={
                     touchedFields.firstName && errors.firstName
                       ? "✍🏼...campo requerido primer nombre"
-                      : "✍🏼..."
+                      : "✍🏼 Primer nombre . . ."
                   }
                   onBlur={handleBlur}
                   onChange={handleChange}
@@ -148,7 +141,7 @@ const BasicDataForm = () => {
                   placeholder={
                     errors.secondName
                       ? "Campo opcional segundo nombre"
-                      : "Campo opcional segundo nombre"
+                      : "✍🏻 Segundo nombre . . ."
                   }
                   onBlur={handleBlur}
                   onChange={handleChange}
@@ -186,7 +179,7 @@ const BasicDataForm = () => {
                   placeholder={
                     errors.firstSurName
                       ? "✍🏼 campo requerido primer apellido"
-                      : "✍🏼..."
+                      : "✍🏼 Primer apellido . . ."
                   }
                   onBlur={handleBlur}
                   onChange={handleChange}
@@ -226,7 +219,7 @@ const BasicDataForm = () => {
                   placeholder={
                     errors.secondSurName
                       ? "Campo opcional segundo apellido"
-                      : "Campo opcional segundo apellido"
+                      : "✍🏻 Segundo apellido . . ."
                   }
                   onBlur={handleBlur}
                   onChange={handleChange}
@@ -242,12 +235,13 @@ const BasicDataForm = () => {
             </div>
 
             {/*COLUMNA 2*/}
-            <div id="form-column-two" className={styles.formcolum}>
+            <div id="form-column-two" className={styles.formcolumn}>
               {/* TIPO DOCUMENTO  COL 2 */}
 
               <div id="questionFive" className={styles.question}>
-                <label htmlFor="kindDocSelect"> Tipo de documento </label>
+                <label htmlFor="kindDocSelect">Tipo de documento:</label>
                 <select
+                className={styles.selects}
                   id="kindDocSelect"
                   name="kindDoc"
                   style={{
@@ -269,7 +263,7 @@ const BasicDataForm = () => {
                   required
                 >
                   <option value="" disabled hidden>
-                    🪪 Tipo de documento
+                  🪪 Tipo de documento:
                   </option>
                   <option value="Registro civil">Registro civil</option>
                   <option value="Tarjeta de identidad">
@@ -318,7 +312,7 @@ const BasicDataForm = () => {
                       : "none",
                   }}
                   placeholder={
-                    errors.docNumber ? "Campo requerido numero doc" : "✍🏽..."
+                    errors.docNumber ? "Campo requerido numero doc" : "✍🏽 Numero de documento . . ."
                   }
                   onBlur={handleBlur}
                   onChange={handleChange}
@@ -339,6 +333,7 @@ const BasicDataForm = () => {
                 <label htmlFor="nataleDateInput">Fecha Nacimiento:</label>
                 <input
                   type="date"
+                  className={styles.dateInput}
                   id="nataleDateInput"
                   name="nataleDate"
                   style={{
@@ -393,7 +388,7 @@ const BasicDataForm = () => {
                   required
                 >
                   <option value="" disabled hidden>
-                    Estado civil
+                  ❓Estado civil
                   </option>
                   <option value="Soltero/a">Soltero/a</option>
                   <option value="Casado/a">Casado/a</option>
@@ -416,7 +411,7 @@ const BasicDataForm = () => {
             </div>
 
             {/*COLUMNA 3 */}
-            <div id="form-column-tree" className={styles.formcolum}>
+            <div id="form-column-tree" className={styles.formcolumn}>
               {/* DISCAPACIDAD COL 3 */}
 
               <div id="questionNine" className={styles.question}>
@@ -443,7 +438,7 @@ const BasicDataForm = () => {
                   required
                 >
                   <option value="" disabled hidden>
-                    Discapacidad:
+                  👨🏼‍🦽 Discapacidad:
                   </option>
                   <option value="No">No</option>
                   <option value="Si">Si</option>
@@ -481,7 +476,7 @@ const BasicDataForm = () => {
                   required
                 >
                   <option value="" disabled hidden>
-                    Género
+                  ♀️ ⚧️ ♂️ Género
                   </option>
                   <option value="Femenino">Femenino</option>
                   <option value="Masculino">Masculino</option>
@@ -515,7 +510,7 @@ const BasicDataForm = () => {
                       : "none",
                   }}
                   placeholder={
-                    errors.occupation ? "Campo requerido ocupación" : "✍🏽..."
+                    errors.occupation ? "Campo requerido ocupación" : "✍🏽 Ocupación . . ."
                   }
                   onBlur={handleBlur}
                   onChange={handleChange}
@@ -554,7 +549,7 @@ const BasicDataForm = () => {
                   placeholder={
                     errors.phoneNumber
                       ? "📱 campo requerido numero contacto"
-                      : " 📱..."
+                      : " ✍🏻 Número telefónico 📱. . ."
                   }
                   onBlur={handleBlur}
                   onChange={handleChange}
@@ -571,7 +566,7 @@ const BasicDataForm = () => {
             </div>
 
             {/*  COLUMNA 4 */}
-            <div id="form-column-four" className={styles.formcolum}>
+            <div id="form-column-four" className={styles.formcolumn}>
               {/* CORREO COL 3 */}
               <div id="questionThirteen" className={styles.question}>
                 <label htmlFor="emailInput"> Correo electrónico: </label>
@@ -593,7 +588,7 @@ const BasicDataForm = () => {
                       : "none",
                   }}
                   placeholder={
-                    errors.email ? "📧 campo requerido e-mail" : "📧..."
+                    errors.email ? "📧 campo requerido e-mail" : "📧 e-mail . . ."
                   }
                   onBlur={handleBlur}
                   onChange={handleChange}
@@ -605,18 +600,13 @@ const BasicDataForm = () => {
                   {touchedFields.email && errors.email && errors.email}
                 </span>{" "}
               </div>
-            </div>
-
-            <br />
-            <div className={styles.actionbuttons}>
+              <div className={styles.actionbuttons}>
               <input type="submit" value="Enviar" />
             </div>
+            </div>
+
+          
           </form>
-          <img
-            src={title}
-            className={styles.title}
-            alt="Creación de Usuarios"
-          />
         </fieldset>
       </div>
     </div>
