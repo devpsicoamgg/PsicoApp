@@ -27,16 +27,29 @@ nav {
 }
 
 
+
+
+
 nav .title {
 font-size: 1.5rem;
 font-weight:inherit;
 text-decoration: none;
 color: #fff;
 margin-right: 2%;
+text-shadow: 1px 3px 4px #002575;
+transition: transform 0.3s ease;
+}
+
+nav .title:hover {
+  transform: scale(1.1); 
 }
 
 nav .title .logoOne {
+position: relative;
 color: #002575;
+text-shadow: 1px 3px 4px rgb(255, 255, 255);
+bottom: 12px;
+left: 8px;
 }
 
  nav ul {
@@ -59,11 +72,14 @@ color: #002575;
   padding: 0.2rem;
   margin: 0 1rem;
   text-align: center; 
+  transition: .4s;
 }
 
 nav ul li a:hover {
-  background: #000000;
-  backdrop-filter: blur(5px);
+  background: #ffffffc2;
+  color: black;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255 .4), transparent);
+  
 }
 
 
@@ -76,6 +92,7 @@ nav .menu {
   justify-content: space-between;
   width: 2.25rem;
   height: 2rem;
+
   cursor: pointer;
 }
 
