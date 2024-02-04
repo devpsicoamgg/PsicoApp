@@ -46,3 +46,28 @@
   padding-inline: 0.3rem;
   color: rgb(255, 255, 255);
 }
+
+
+
+/* Celulares (320 x 480) */
+@media (max-width: 320px) and (max-height: 480px) {
+  .containerLogingForm {
+    display: flex;
+    flex-direction: column; /* Cambia la dirección a columna */
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+  }
+}
+
+/* Tablets (768 x 1024) */
+@media (min-width: 321px) and (min-height: 481px) and (max-width: 768px) and (max-height: 1024px) {
+  .containerLogingForm {
+    display: flex;
+    flex-direction: column; /* Cambia la dirección a columna */
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+  }
+}
+
