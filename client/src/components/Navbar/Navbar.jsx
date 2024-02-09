@@ -58,11 +58,7 @@ const Navbar = () => {
               marginBottom: "8px",
             }}
           />
-          <span
-            style={{ color: "white", fontSize: "12px", fontWeight: "lighter" }}
-          >
-            {displayName}
-          </span>
+
         </div>
 
         <ul style={menuOpen ? { display: "flex" } : {}}>
