@@ -83,10 +83,7 @@ const LogingForm = () => {
               Iniciar sesión
             </button>
           </form>
-          <p className={styles.h2Msj}>
-            {" "}
-            ----------------------------------------------------
-          </p>
+      
           <button
             type="button"
             onClick={handleGoogleLogin}
