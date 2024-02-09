@@ -10,14 +10,13 @@ const Navbar = () => {
   const { photoURL, displayName } = auth.user;
   const navigate = useNavigate();
 
-
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
   const handelLogOut = () => {
     auth.logout();
-    navigate(ROUTES.LOGIN)
+    navigate(ROUTES.LOGIN);
   };
 
   return (
@@ -34,34 +33,37 @@ const Navbar = () => {
           <span></span>
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            cursor: "pointer", // Agregar cursor pointer para indicar que es clickeable
-          }}
-          onClick={handelLogOut} // Llamar a handelLogOut al hacer clic en el div
-        >
-          <span
-            style={{ color: "white", fontSize: "14px", fontWeight: "lighter" }}
-          >
-            Cerrar sesión
-          </span>
-          <img
-            src={photoURL}
-            alt={displayName}
-            style={{
-              width: "40px",
-              height: "40px",
-              borderRadius: "50%",
-              marginBottom: "8px",
-            }}
-          />
-
-        </div>
-
         <ul style={menuOpen ? { display: "flex" } : {}}>
+          <li
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              cursor: "pointer", // Agregar cursor pointer para indicar que es clickeable
+            }}
+            onClick={handelLogOut} // Llamar a handelLogOut al hacer clic en el div
+          >
+            <img
+              src={photoURL}
+              alt={displayName}
+              style={{
+                width: "40px",
+                height: "40px",
+                borderRadius: "50%",
+                marginBottom: "8px",
+              }}
+            />
+                        <span
+              style={{
+                color: "white",
+                fontSize: "14px",
+                fontWeight: "lighter",
+              }}
+            >
+              Cerrar sesión
+            </span>
+          </li>
+
           <li>
             <NavLink
               to={ROUTES.BASIC_DATA_FORM}
