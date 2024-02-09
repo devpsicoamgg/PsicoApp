@@ -23,8 +23,8 @@ const Navbar = () => {
     <>
       <nav id="test" className={styles.navBar}>
         <Link to={ROUTES.HOME} className={styles.title}>
-          <span className={styles.logoOne}>Psy</span>
-          <span className={styles.logoTwo}>App</span> <span></span>
+        <span lang="en" className={styles.logoOne}>Psy</span>
+  <span lang="en" className={styles.logoTwo}>App.</span> <span></span>
         </Link>
 
         <div className={styles.menu} onClick={toggleMenu}>
@@ -34,35 +34,39 @@ const Navbar = () => {
         </div>
 
         <ul style={menuOpen ? { display: "flex" } : {}}>
-          <li
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              cursor: "pointer", // Agregar cursor pointer para indicar que es clickeable
-            }}
-            onClick={handelLogOut} // Llamar a handelLogOut al hacer clic en el div
-          >
-            <img
-              src={photoURL}
-              alt={displayName}
+          <div className={styles.imgBtn}>
+            <li
               style={{
-                width: "40px",
-                height: "40px",
-                borderRadius: "50%",
-                marginBottom: "8px",
+                display: "flex",
+                width: "90px",
+                padding: "0.2rem",
+                flexDirection: "column",
+                alignItems: "center",
+                cursor: "pointer", // Agregar cursor pointer para indicar que es clickeable
               }}
-            />
-                        <span
-              style={{
-                color: "white",
-                fontSize: "14px",
-                fontWeight: "lighter",
-              }}
+              onClick={handelLogOut} // Llamar a handelLogOut al hacer clic en el div
             >
-              Cerrar sesión
-            </span>
-          </li>
+              <img
+                src={photoURL}
+                alt={displayName}
+                style={{
+                  width: "35px",
+                  height: "35px",
+                  borderRadius: "50%",
+                  marginBottom: "8px",
+                }}
+              />
+              <p
+                style={{
+                  color: "white",
+                  fontSize: "12px",
+                  fontWeight: "lighter",
+                }}
+              >
+                Cerrar sesión
+              </p>
+            </li>
+          </div>
 
           <li>
             <NavLink
