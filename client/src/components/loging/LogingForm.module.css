@@ -127,7 +127,7 @@
   background-position: 12px 11px;
     &:hover {
       border: 0.9px solid white;
-      background-color: black;
+      background-color: rgb(15, 171, 1);
       color: white;
     }
 }
