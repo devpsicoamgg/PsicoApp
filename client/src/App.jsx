@@ -12,6 +12,8 @@ import Segmentation from "./components/Segmentation/Segmentation";
 import Various from "./components/Various/Various";
 import Navbar from "./components/Navbar/Navbar";
 import ROUTES from "./routes/routesHelper";
+import { AuthProvider } from "./components/context/authContext";
+
 import "./App.css";
 
 
@@ -19,7 +21,7 @@ import "./App.css";
 function App() {
 
   return (
-    <>
+    <AuthProvider>
     <BrowserRouter> 
     <Routes> 
         <Route path={ROUTES.LOGIN} element={<LogingForm />} />
@@ -43,7 +45,7 @@ function App() {
           </>
           </Routes>
       </BrowserRouter>
-    </>
+    </AuthProvider>
   );
 }
 
