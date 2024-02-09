@@ -7,7 +7,7 @@ import { useAuth } from "../context/authContext";
 
 const LogingForm = () => {
   const auth = useAuth();
-  const { currentUser } = auth.user;
+  const { displayName } = auth.user;
   const [emailRegister, setEmailRegister] = useState("");
   const [passwordRegister, setPasswordRegister] = useState("");
   const navigate = useNavigate();
@@ -22,13 +22,13 @@ const LogingForm = () => {
     try {
       const response = await auth.login(emailRegister, passwordRegister);
       console.log("Inicio de sesión exitoso en Login:", response.user);
+      console.log("nombre:", displayName);
       navigate(ROUTES.HOME);
     } catch (error) {
-      console.log("Inicio de sesión fallido en :", error.user);
       console.error("Error al iniciar sesión en Login:", error.message);
+      console.log("Inicio de sesión fallido en :", error.user);
     }
   };
-  
 
   const handleGoogleLogin = async () => {
     await auth.loginWithGoogle();
@@ -83,7 +83,7 @@ const LogingForm = () => {
               Iniciar sesión
             </button>
           </form>
-      
+
           <button
             type="button"
             onClick={handleGoogleLogin}
