@@ -7,7 +7,7 @@ import { useAuth } from "../context/authContext";
 
 const LogingForm = () => {
   const auth = useAuth();
-  const { displayName } = auth.user;
+  const { photoURL } = auth.user;
   const [emailRegister, setEmailRegister] = useState("");
   const [passwordRegister, setPasswordRegister] = useState("");
   const navigate = useNavigate();

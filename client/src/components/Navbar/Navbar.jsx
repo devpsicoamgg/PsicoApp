@@ -1,13 +1,23 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useNavigate, Link, NavLink } from "react-router-dom";
 import ROUTES from "../../routes/routesHelper";
 import styles from "./Navbar.module.css";
+import { useAuth } from "../context/authContext";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const auth = useAuth();
+  const { photoURL, displayName } = auth.user;
+  const navigate = useNavigate();
+
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const handelLogOut = () => {
+    auth.logout();
+    navigate(ROUTES.LOGIN)
   };
 
   return (
@@ -22,6 +32,37 @@ const Navbar = () => {
           <span></span>
           <span> </span>
           <span></span>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            cursor: "pointer", // Agregar cursor pointer para indicar que es clickeable
+          }}
+          onClick={handelLogOut} // Llamar a handelLogOut al hacer clic en el div
+        >
+          <span
+            style={{ color: "white", fontSize: "14px", fontWeight: "lighter" }}
+          >
+            Cerrar sesión
+          </span>
+          <img
+            src={photoURL}
+            alt={displayName}
+            style={{
+              width: "40px",
+              height: "40px",
+              borderRadius: "50%",
+              marginBottom: "8px",
+            }}
+          />
+          <span
+            style={{ color: "white", fontSize: "12px", fontWeight: "lighter" }}
+          >
+            {displayName}
+          </span>
         </div>
 
         <ul style={menuOpen ? { display: "flex" } : {}}>
@@ -194,7 +235,6 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-
     </>
   );
 };
