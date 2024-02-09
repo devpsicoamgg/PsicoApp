@@ -127,12 +127,12 @@
   background-position: 12px 11px;
     &:hover {
       border: 0.9px solid white;
-      background-color: rgb(15, 171, 1);
+      background-color: rgb(0, 0, 0);
       color: white;
     }
 }
 /* Celulares (320 x 480) */
-@media (max-width: 636px) and (max-height: 648px) {
+@media (max-width: 720px) and (max-height: 1280px) {
   .containerLogingForm {
     display: flex;
     flex-direction: column;
