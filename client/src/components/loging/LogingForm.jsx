@@ -32,10 +32,8 @@ const LogingForm = () => {
 
   const handleGoogleLogin = async () => {
     await auth.loginWithGoogle();
+    navigate(ROUTES.HOME);
     console.log("handleGoogleLoginauth.user");
-    if (auth.user) {
-      navigate(ROUTES.HOME);
-    }
   };
 
   return (
