@@ -24,7 +24,7 @@
   cursor: pointer;
 }
 .changeBtn {
-  background-color: rgba(152, 150, 150, 0.135);
+  background-image: radial-gradient(rgba(152, 150, 150, 0.135) 90%, rgb(255, 255, 255) 10%);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -183,12 +183,16 @@
   }
 
 
+.imageContainer {
+  width: 100%;
+}
+
 
   .image {
     display: relative;
-    margin-top: 50%;
+    margin-top: -50%;
     margin-bottom: 20%;
-    margin-right: -11%;
+    width: 200%;
   }
 
   .inputGroup {

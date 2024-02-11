@@ -22,6 +22,19 @@ const SingUp = ({ onClick }) => {
       <div className={styles.containerSingUp}>
         <div className={styles.formContainer}>
           <form>
+          <div className={styles.inputGroup}>
+              <input
+                className={styles.input}
+                required
+                type="text"
+                id="nombre"
+                name="nombre"
+              />
+              <label className={styles.label} htmlFor="nombre">
+                Nombre
+              </label>
+            </div>
+
             <div className={styles.inputGroup}>
               <input
                 className={styles.input}

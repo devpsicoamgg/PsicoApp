@@ -47,13 +47,13 @@ const LogingForm = () => {
       </div>
 
       <div className={styles.formContainer}>
-        <span
+        <p
           type="text"
           className={styles.changeBtn}
           onClick={toggleMostrarOtroComponente}
         >
           {buttonText}
-        </span>
+        </p>
 
         {mostrarOtroComponente ? (
           <OtroComponente onClick={toggleMostrarOtroComponente} />
