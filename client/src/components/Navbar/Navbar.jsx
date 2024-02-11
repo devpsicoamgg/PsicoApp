@@ -23,8 +23,13 @@ const Navbar = () => {
     <>
       <nav id="test" className={styles.navBar}>
         <Link to={ROUTES.HOME} className={styles.title}>
-        <span lang="en" className={styles.logoOne}>Psy</span>
-  <span lang="en" className={styles.logoTwo}>App.</span> <span></span>
+          <span lang="en" className={styles.logoOne}>
+            Psy
+          </span>
+          <span lang="en" className={styles.logoTwo}>
+            App.
+          </span>{" "}
+          <span></span>
         </Link>
 
         <div className={styles.menu} onClick={toggleMenu}>

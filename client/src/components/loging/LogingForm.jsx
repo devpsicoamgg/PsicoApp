@@ -54,7 +54,7 @@ const LogingForm = () => {
                 id="email"
                 name="email"
               />
-              <label className={styles.label} htmlFor="firstName">
+              <label className={styles.label} htmlFor="email">
                 Correo
               </label>
             </div>
@@ -68,7 +68,7 @@ const LogingForm = () => {
                 onChange={(e) => setPasswordRegister(e.target.value)}
                 name="password"
               />
-              <label className={styles.label} htmlFor="secondName">
+              <label className={styles.label} htmlFor="password">
                 Clave
               </label>
             </div>
