@@ -2,27 +2,26 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./LogingForm.module.css";
 import ROUTES from "../../routes/routesHelper";
+import { FaEye, FaEyeSlash } from "react-icons/fa"; // Importación corregida
 import imagen from "../../assets/img/background.png";
 import { useAuth } from "../context/authContext";
+import OtroComponente from "./SingUp";
 
 const LogingForm = () => {
   const auth = useAuth();
   const { photoURL } = auth.user;
   const [emailRegister, setEmailRegister] = useState("");
   const [passwordRegister, setPasswordRegister] = useState("");
+  const [mostrarOtroComponente, setMostrarOtroComponente] = useState(false);
+  const [buttonText, setButtonText] = useState("Regístrate");
+  const [passwordVisible, setPasswordVisible] = useState(false);
   const navigate = useNavigate();
-
-  const handleRegister = (e) => {
-    e.preventDefault();
-    auth.register(emailRegister, passwordRegister);
-  };
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       const response = await auth.login(emailRegister, passwordRegister);
       console.log("Inicio de sesión exitoso en Login:", response.user);
-      console.log("nombre:", displayName);
       navigate(ROUTES.HOME);
     } catch (error) {
       console.error("Error al iniciar sesión en Login:", error.message);
@@ -36,14 +35,29 @@ const LogingForm = () => {
     console.log("handleGoogleLoginauth.user");
   };
 
-  return (
-    <>
-      <div className={styles.containerLogingForm}>
-        <div className={styles.imageContainer}>
-          <img src={imagen} alt="Imagen" className={styles.image} />
-        </div>
+  const toggleMostrarOtroComponente = () => {
+    setMostrarOtroComponente(!mostrarOtroComponente);
+    setButtonText(mostrarOtroComponente ? "Regístrate" : "Iniciar Sesión");
+  };
 
-        <div className={styles.formContainer}>
+  return (
+    <div className={styles.containerLogingForm}>
+      <div className={styles.imageContainer}>
+        <img src={imagen} alt="Imagen" className={styles.image} />
+      </div>
+
+      <div className={styles.formContainer}>
+        <span
+          type="text"
+          className={styles.changeBtn}
+          onClick={toggleMostrarOtroComponente}
+        >
+          {buttonText}
+        </span>
+
+        {mostrarOtroComponente ? (
+          <OtroComponente onClick={toggleMostrarOtroComponente} />
+        ) : (
           <form>
             <div className={styles.inputGroup}>
               <input
@@ -60,19 +74,25 @@ const LogingForm = () => {
             </div>
 
             <div className={styles.inputGroup}>
+            <div className={styles.inputContainerPass}> 
               <input
                 className={styles.input}
                 required
-                type="text"
+                type={passwordVisible ? "text" : "password"}
+                name="password"
                 id="password"
                 onChange={(e) => setPasswordRegister(e.target.value)}
-                name="password"
               />
+              
               <label className={styles.label} htmlFor="password">
                 Clave
               </label>
+              
+              <span className={styles.eyeIcon} onClick={() => setPasswordVisible(!passwordVisible)}>
+                {passwordVisible ? <FaEyeSlash /> : <FaEye />}
+              </span>
             </div>
-
+             </div>
             <button
               className={styles.button}
               type="submit"
@@ -80,18 +100,19 @@ const LogingForm = () => {
             >
               Iniciar sesión
             </button>
+            <>
+              <button
+                type="button"
+                onClick={handleGoogleLogin}
+                className={styles["login-with-google-btn"]}
+              >
+                Inicia con Google
+              </button>
+            </>
           </form>
-
-          <button
-            type="button"
-            onClick={handleGoogleLogin}
-            className={styles["login-with-google-btn"]}
-          >
-            Inicia con Google
-          </button>
-        </div>
+        )}
       </div>
-    </>
+    </div>
   );
 };
 
