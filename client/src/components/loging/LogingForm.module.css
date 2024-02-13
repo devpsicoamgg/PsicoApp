@@ -24,7 +24,6 @@
   cursor: pointer;
 }
 .changeBtn {
-  background-image: radial-gradient(rgba(152, 150, 150, 0.135) 90%, rgb(255, 255, 255) 10%);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -37,8 +36,7 @@
   border-radius: 15px;
   text-shadow: none;
   font-size: 16px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; 
-  box-shadow: 0px 0px 56px rgba(255, 0, 0, 0.5); 
+
 }
 
 
@@ -179,7 +177,7 @@
   }
 
   .eyeIcon {
-    left: 107%;
+    left: 100%;
   }
 
 
@@ -190,8 +188,6 @@
 
   .image {
     display: relative;
-    margin-top: -50%;
-    margin-bottom: 20%;
     width: 200%;
   }
 
@@ -204,7 +200,7 @@
 
   .login-with-google-btn,
   .button {
-    width: 120%; 
+    width: 110%; 
     font-size: .89rem;
     padding: 0.8rem;
     border-radius: 8px;

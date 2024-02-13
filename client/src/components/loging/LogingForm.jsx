@@ -47,13 +47,13 @@ const LogingForm = () => {
       </div>
 
       <div className={styles.formContainer}>
-        <p
+        <span
           type="text"
           className={styles.changeBtn}
           onClick={toggleMostrarOtroComponente}
         >
           {buttonText}
-        </p>
+        </span>
 
         {mostrarOtroComponente ? (
           <OtroComponente onClick={toggleMostrarOtroComponente} />
@@ -74,25 +74,28 @@ const LogingForm = () => {
             </div>
 
             <div className={styles.inputGroup}>
-            <div className={styles.inputContainerPass}> 
-              <input
-                className={styles.input}
-                required
-                type={passwordVisible ? "text" : "password"}
-                name="password"
-                id="password"
-                onChange={(e) => setPasswordRegister(e.target.value)}
-              />
-              
-              <label className={styles.label} htmlFor="password">
-                Clave
-              </label>
-              
-              <span className={styles.eyeIcon} onClick={() => setPasswordVisible(!passwordVisible)}>
-                {passwordVisible ? <FaEyeSlash /> : <FaEye />}
-              </span>
+              <div className={styles.inputContainerPass}>
+                <input
+                  className={styles.input}
+                  required
+                  type={passwordVisible ? "text" : "password"}
+                  name="password"
+                  id="password"
+                  onChange={(e) => setPasswordRegister(e.target.value)}
+                />
+
+                <label className={styles.label} htmlFor="password">
+                  Clave
+                </label>
+
+                <span
+                  className={styles.eyeIcon}
+                  onClick={() => setPasswordVisible(!passwordVisible)}
+                >
+                  {passwordVisible ? <FaEyeSlash /> : <FaEye />}
+                </span>
+              </div>
             </div>
-             </div>
             <button
               className={styles.button}
               type="submit"

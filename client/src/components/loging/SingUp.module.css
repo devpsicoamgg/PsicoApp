@@ -186,8 +186,6 @@
 
   .image {
     display: relative;
-    margin-top: 50%;
-    margin-bottom: 20%;
     margin-right: -11%;
   }
 
@@ -200,7 +198,7 @@
 
   .login-with-google-btn,
   .button {
-    width: 120%; 
+    width: 110%; 
     font-size: .89rem;
     padding: 0.8rem;
     border-radius: 8px;
