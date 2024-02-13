@@ -1,9 +1,11 @@
+import Navbar from "../Navbar/Navbar";
 import styles from "./Segmentation.module.css";
 
 
 const Segmentation = () => {
   return (
     <>
+    <Navbar />
       <div className={styles.containerSegmentation}>
          👋🏽👋🏽👋🏽 Hola, soy el componente llamado Segmentation
          👋🏽👋🏽👋🏽 Hola, soy el componente llamado Segmentation

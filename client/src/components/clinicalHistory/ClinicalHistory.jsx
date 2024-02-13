@@ -7,6 +7,7 @@ import OtherIndicators from "./OthesIndicators/OthersIndicators";
 import DiagnosesImpression from "./diagnosysImpresion/DiagnosysImpresion";
 import SearchPatientResults from "../searchPatientResults/SearchPatientResults";
 import EditAndDeleteDataForm from "../editAndDelete/EditAndDelete";
+import Navbar from "../Navbar/Navbar";
 
 const ClinicalHistory = () => {
   const [patients, setPatients] = useState([]);
@@ -31,6 +32,7 @@ const ClinicalHistory = () => {
 
   return (
     <>
+    <Navbar /> 
       <div className="clinical-history-container">
         <h1> HISTORIA CLÍNICA PSICOLOGÍA </h1>
         <SearchPatientResults

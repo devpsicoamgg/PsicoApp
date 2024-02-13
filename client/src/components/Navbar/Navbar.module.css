@@ -63,6 +63,15 @@ left: 8px;
   flex: 1;
  }
 
+ 
+ .imgBtn {
+  display: flex;
+   text-align: center; 
+   justify-content: center; 
+   align-items: center;
+ }
+
+
 .imgBtn:hover {
   background: #ff000038;
   text-align: center; 
@@ -147,6 +156,13 @@ nav ul {
 
   nav ul.open {
     display: flex;
+  }
+
+  .imgBtn {
+    text-align: center; 
+    display: flex-end;
+    justify-content: center; 
+    align-items: center;
   }
 
   nav ul li {

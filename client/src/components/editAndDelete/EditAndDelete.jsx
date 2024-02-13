@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { useForm } from "../../Hooks/UseForms";
+import Navbar from "../Navbar/Navbar";
 
 
 const EditAndDeleteDataForm = () => {
@@ -111,6 +112,7 @@ const EditAndDeleteDataForm = () => {
 
   return (
     <div>
+      <Navbar />
       <input
         type="text"
         className="input-search-patients"

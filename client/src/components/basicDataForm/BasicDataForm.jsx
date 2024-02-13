@@ -4,6 +4,7 @@ import styles from "./basicDataForm.module.css";
 import validationForm from "../../utils/ValidationForm";
 import closeImage from "../../assets/img/close1.png";
 import { helpHttp } from "../../Helpers/helpHttps.js";
+import Navbar from "../Navbar/Navbar.jsx";
 
 const url = "http://localhost:3000/patients";
 let api = helpHttp();
@@ -73,6 +74,8 @@ const BasicDataForm = () => {
   };
 
   return (
+    <div> 
+      <Navbar />
     <div className={styles.container}>
       <div className={styles.basicDataForm}>
         <fieldset className={styles.fieldset}>
@@ -609,6 +612,7 @@ const BasicDataForm = () => {
           </form>
         </fieldset>
       </div>
+    </div>
     </div>
   );
 };

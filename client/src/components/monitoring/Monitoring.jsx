@@ -1,11 +1,14 @@
+import Navbar from "../Navbar/Navbar";
+
 const Monitoring = () => {
   return (
     <>
-       <div className="monitoring">
-         👋🏽👋🏽👋🏽 Hola, soy el componente llamado MONITORING
+      <Navbar />
+      <div className="monitoring">
+        👋🏽👋🏽👋🏽 Hola, soy el componente llamado MONITORING
       </div>
     </>
   );
 };
 
-export default Monitoring;  
+export default Monitoring;

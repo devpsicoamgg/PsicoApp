@@ -39,40 +39,6 @@ const Navbar = () => {
         </div>
 
         <ul style={menuOpen ? { display: "flex" } : {}}>
-          <div className={styles.imgBtn}>
-            <li
-              style={{
-                display: "flex",
-                width: "90px",
-                padding: "0.2rem",
-                flexDirection: "column",
-                alignItems: "center",
-                cursor: "pointer", // Agregar cursor pointer para indicar que es clickeable
-              }}
-              onClick={handelLogOut} // Llamar a handelLogOut al hacer clic en el div
-            >
-              <img
-                src={photoURL}
-                alt={displayName}
-                style={{
-                  width: "35px",
-                  height: "35px",
-                  borderRadius: "50%",
-                  marginBottom: "8px",
-                }}
-              />
-              <p
-                style={{
-                  color: "white",
-                  fontSize: "12px",
-                  fontWeight: "lighter",
-                }}
-              >
-                Cerrar sesión
-              </p>
-            </li>
-          </div>
-
           <li>
             <NavLink
               to={ROUTES.BASIC_DATA_FORM}
@@ -240,6 +206,31 @@ const Navbar = () => {
               AJUSTES <br /> VARIOS <span></span>
             </NavLink>
           </li>
+
+          <div className={styles.imgBtn}>
+            <li onClick={handelLogOut}>
+              <img
+                src={photoURL}
+                alt={displayName}
+                style={{
+                  width: "28px",
+                  height: "28px",
+                  borderRadius: "50%",
+                  marginBottom: "8px",
+                }}
+              />
+              <div
+                style={{
+                  color: "white",
+                  fontSize: "12px",
+                  fontWeight: "lighter",
+                  marginTop: "-13px",
+                }}
+              >
+                Cerrar sesión
+              </div>
+            </li>
+          </div>
         </ul>
       </nav>
     </>
