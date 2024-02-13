@@ -6,7 +6,7 @@
 }
 
 .imageContainer {
-  width: 50%;
+  width: 100%;
   display: flex;
   justify-content: flex-end; 
 }
@@ -37,14 +37,12 @@
   border-radius: 15px;
   text-shadow: none;
   font-size: 16px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; 
-  box-shadow: 0px 0px 56px rgba(255, 0, 0, 0.5); 
+  box-shadow: 0px 5px 15px rgb(146, 145, 145);
 }
 
 
 .changeBtn:hover {
-  background-color: #000000;
-  box-shadow: 0px 0px 56px rgba(0, 255, 42, 0.5);
+  box-shadow: 0px 5px 15px rgb(255, 255, 255);
 }
 
 .image {
@@ -61,7 +59,6 @@
 .inputGroup {
   font-size: 1rem;
   position: relative;
-  --primary: #ffffff;
   margin-bottom: 20px; 
 }
 
@@ -87,13 +84,12 @@
 
 .input:focus {
   border: 1px solid
-  var(--primary);
 }
 
 .input:is(:focus, :valid) ~ label {
   transform: translateY(-120%) scale(0.9);
-  background-color: #000000;
   border-radius: 10px;
+  background-color: #242424;
   box-shadow: 0 0 5px rgb(255, 255, 255);
   padding-inline: 0.3rem;
   color: rgb(255, 255, 255);
@@ -101,7 +97,7 @@
 
 
 
-
+.buttonX,
 .login-with-google-btn {
   transition: background-color .3s, box-shadow .3s;  
   padding: 12px 16px 12px 42px;
@@ -110,7 +106,7 @@
   box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
   color: #000000;
   font-size: 20px;
-  width: 64.6%;
+  width: 68.6%;
   margin-top: 4%;
   font-size: 1rem;
   font-family: sans-serif;
@@ -122,7 +118,6 @@
   
   &:hover {
     border: 0.9px solid white;
-    background-color: black;
     color: white;
   }
   
@@ -179,7 +174,7 @@
   }
 
   .eyeIcon {
-    left: 107%;
+    left: 104%;
   }
 
 
@@ -197,8 +192,8 @@
   }
 
   .login-with-google-btn,
-  .button {
-    width: 110%; 
+  .buttonX {
+    width: 113%; 
     font-size: .89rem;
     padding: 0.8rem;
     border-radius: 8px;
@@ -248,7 +243,6 @@
 
   .input:is(:focus, :valid) ~ label {
     transform: translateY(-120%) scale(0.9);
-    background-color: #000000;
     border-radius: 10px;
     box-shadow: 0 0 5px rgb(255, 255, 255);
     padding-inline: 0.3rem;

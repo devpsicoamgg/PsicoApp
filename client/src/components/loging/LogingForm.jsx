@@ -9,7 +9,6 @@ import OtroComponente from "./SingUp";
 
 const LogingForm = () => {
   const auth = useAuth();
-  const { photoURL } = auth.user;
   const [emailRegister, setEmailRegister] = useState("");
   const [passwordRegister, setPasswordRegister] = useState("");
   const [mostrarOtroComponente, setMostrarOtroComponente] = useState(false);
@@ -47,13 +46,14 @@ const LogingForm = () => {
       </div>
 
       <div className={styles.formContainer}>
-        <span
+        <div className={styles.otra}>
+        <p
           type="text"
           className={styles.changeBtn}
           onClick={toggleMostrarOtroComponente}
         >
           {buttonText}
-        </span>
+        </p>
 
         {mostrarOtroComponente ? (
           <OtroComponente onClick={toggleMostrarOtroComponente} />
@@ -74,30 +74,27 @@ const LogingForm = () => {
             </div>
 
             <div className={styles.inputGroup}>
-              <div className={styles.inputContainerPass}>
-                <input
-                  className={styles.input}
-                  required
-                  type={passwordVisible ? "text" : "password"}
-                  name="password"
-                  id="password"
-                  onChange={(e) => setPasswordRegister(e.target.value)}
-                />
-
-                <label className={styles.label} htmlFor="password">
-                  Clave
-                </label>
-
-                <span
-                  className={styles.eyeIcon}
-                  onClick={() => setPasswordVisible(!passwordVisible)}
-                >
-                  {passwordVisible ? <FaEyeSlash /> : <FaEye />}
-                </span>
-              </div>
+            <div className={styles.inputContainerPass}> 
+              <input
+                className={styles.input}
+                required
+                type={passwordVisible ? "text" : "password"}
+                name="password"
+                id="password"
+                onChange={(e) => setPasswordRegister(e.target.value)}
+              />
+              
+              <label className={styles.label} htmlFor="password">
+                Clave
+              </label>
+              
+              <span className={styles.eyeIcon} onClick={() => setPasswordVisible(!passwordVisible)}>
+                {passwordVisible ? <FaEyeSlash /> : <FaEye />}
+              </span>
             </div>
+             </div>
             <button
-              className={styles.button}
+              className={styles.buttonX}
               type="submit"
               onClick={handleLogin}
             >
@@ -114,6 +111,7 @@ const LogingForm = () => {
             </>
           </form>
         )}
+      </div>
       </div>
     </div>
   );

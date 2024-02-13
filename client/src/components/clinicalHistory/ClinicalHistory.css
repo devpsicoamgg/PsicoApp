@@ -3,7 +3,7 @@
 
 .clinical-history-container {
   width: 95%;
-  margin-top: 10px;
+  margin-top: 10px auto;
   box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.772);
   border-radius: 5px;
   padding: 5px;
@@ -516,3 +516,9 @@ textarea#transcriptionInput,
 
 
 
+@media screen and (max-width: 768px) {
+  .clinical-history-container {
+    width: 90%; 
+    margin-top: 20px;
+  }
+}

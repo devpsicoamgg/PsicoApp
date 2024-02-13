@@ -74,3 +74,13 @@ select, .dateInput {
   width: 99%;
 }
 
+@media screen and (max-width: 768px) {
+  .formcolumn {
+    width: 100%; /* Cambiar el ancho a 100% para que se ponga en columna */
+  }
+
+  .question {
+    width: 100%; /* Cambiar el ancho a 100% para que se ponga en columna */
+    margin-bottom: 10px; /* Ajustar el margen inferior para separar las preguntas */
+  }
+}
