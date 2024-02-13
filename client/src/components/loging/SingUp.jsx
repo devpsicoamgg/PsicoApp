@@ -22,7 +22,7 @@ const SingUp = ({ onClick }) => {
       <div className={styles.containerSingUp}>
         <div className={styles.formContainer}>
           <form>
-            <div className={styles.inputGroup}>
+          <div className={styles.inputGroup}>
               <input
                 className={styles.input}
                 required
@@ -71,11 +71,11 @@ const SingUp = ({ onClick }) => {
               </div>
             </div>
             <button
-              className={styles.buttonX}
+              className={styles.button}
               type="submit"
               onClick={handleRegister}
             >
-              Registrarse con Google
+              Registrarse
             </button>
           </form>
         </div>

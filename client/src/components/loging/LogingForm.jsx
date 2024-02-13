@@ -9,6 +9,7 @@ import OtroComponente from "./SingUp";
 
 const LogingForm = () => {
   const auth = useAuth();
+  const { photoURL } = auth.user;
   const [emailRegister, setEmailRegister] = useState("");
   const [passwordRegister, setPasswordRegister] = useState("");
   const [mostrarOtroComponente, setMostrarOtroComponente] = useState(false);
@@ -46,7 +47,6 @@ const LogingForm = () => {
       </div>
 
       <div className={styles.formContainer}>
-        <div className={styles.otra}>
         <p
           type="text"
           className={styles.changeBtn}
@@ -94,7 +94,7 @@ const LogingForm = () => {
             </div>
              </div>
             <button
-              className={styles.buttonX}
+              className={styles.button}
               type="submit"
               onClick={handleLogin}
             >
@@ -111,7 +111,6 @@ const LogingForm = () => {
             </>
           </form>
         )}
-      </div>
       </div>
     </div>
   );
