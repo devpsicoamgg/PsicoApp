@@ -207,7 +207,6 @@
   }
 
   .changeBtn {
-    background-color: rgba(22, 22, 22, 0.367);
     color: #fff;
     border: none;
     padding: 11px 2px;
@@ -220,8 +219,6 @@
     border-radius: 15px;
     text-shadow: none;
     font-size: 16px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
-    box-shadow: 0px 0px 56px rgba(255, 0, 0, 0.5); 
   }
 
   .input {
