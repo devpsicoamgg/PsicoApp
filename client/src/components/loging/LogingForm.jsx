@@ -98,7 +98,7 @@ const LogingForm = () => {
               type="submit"
               onClick={handleLogin}
             >
-              Iniciar sesión
+              Iniciar sesión.
             </button>
             <>
               <button
@@ -106,7 +106,7 @@ const LogingForm = () => {
                 onClick={handleGoogleLogin}
                 className={styles["login-with-google-btn"]}
               >
-                Inicia con Google
+                Inicia con Google.
               </button>
             </>
           </form>
